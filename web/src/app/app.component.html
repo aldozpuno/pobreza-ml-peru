@@ -1,0 +1,42 @@
+<a class="saltar" href="#contenido">Ir al contenido</a>
+
+<header class="cabecera">
+  <div class="cabecera__interior">
+    <a class="marca" routerLink="/">
+      <span class="marca__titulo">Pobreza monetaria en el Perú</span>
+      <span class="marca__sub">Modelo predictivo con la ENAHO 2017–2024</span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      @for (s of secciones; track s.ruta) {
+        <a [routerLink]="s.ruta" routerLinkActive="activa" [routerLinkActiveOptions]="{ exact: s.ruta === '/' }"
+           ariaCurrentWhenActive="page">{{ s.nombre }}</a>
+      }
+    </nav>
+  </div>
+</header>
+
+@if (sintetico()) {
+  <p class="aviso">Estos datos son sintéticos de demostración. Ejecute el pipeline con la ENAHO para ver los resultados reales.</p>
+}
+
+<main id="contenido">
+  @switch (estado()) {
+    @case ('cargando') { <p class="estado">Cargando resultados…</p> }
+    @case ('error') {
+      <div class="estado">
+        <p><strong>No se encontraron los resultados en <code>data/</code>.</strong></p>
+        <p>Ejecute <code>pobreza reportar</code> desde la raíz del proyecto y vuelva a cargar la página.</p>
+      </div>
+    }
+    @default { <router-outlet /> }
+  }
+</main>
+
+<footer class="pie">
+  <div class="pie__interior">
+    <p>Tesis doctoral de Aldo Hernán Zanabria Gálvez, Escuela de Posgrado de la Universidad Nacional del Altiplano, Puno.</p>
+    <p>Fuente: microdatos de la Encuesta Nacional de Hogares (ENAHO), INEI. Elaboración propia.
+      @if (meta(); as m) { Resultados generados el {{ fecha() }}, modelo {{ m.estimador }} versión {{ m.version }}. }
+    </p>
+  </div>
+</footer>

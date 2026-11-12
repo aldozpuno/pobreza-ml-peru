@@ -1,0 +1,621 @@
+{
+  "pliegues": [
+    {
+      "Pliegue": "Pliegue 1",
+      "Entrenamiento": "2017–2018",
+      "Calibración": 2019,
+      "Evaluación": 2020
+    },
+    {
+      "Pliegue": "Pliegue 2",
+      "Entrenamiento": "2017–2019",
+      "Calibración": 2020,
+      "Evaluación": 2021
+    },
+    {
+      "Pliegue": "Pliegue 3",
+      "Entrenamiento": "2017–2020",
+      "Calibración": 2021,
+      "Evaluación": 2022
+    },
+    {
+      "Pliegue": "Pliegue 4",
+      "Entrenamiento": "2017–2021",
+      "Calibración": 2022,
+      "Evaluación": 2023
+    },
+    {
+      "Pliegue": "Prueba final",
+      "Entrenamiento": "2017–2022",
+      "Calibración": 2023,
+      "Evaluación": 2024
+    }
+  ],
+  "variables": [
+    {
+      "Variable": "dominio",
+      "Etiqueta": "Dominio geográfico",
+      "Módulo ENAHO": "sumaria",
+      "Grupo": "territorio",
+      "Definición": "Dominio geográfico (1 Costa Norte … 8 Lima Metropolitana)",
+      "Teoría": "Estructuralismo (Sosa Escudero, 2023)",
+      "Signo esperado": "±"
+    },
+    {
+      "Variable": "estrato",
+      "Etiqueta": "Estrato del centro poblado",
+      "Módulo ENAHO": "sumaria",
+      "Grupo": "territorio",
+      "Definición": "Estrato por tamaño del centro poblado (1 = 500 000 a más … 8 = AER simple)",
+      "Teoría": "Estructuralismo (Sosa Escudero, 2023)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "rural",
+      "Etiqueta": "Área rural",
+      "Módulo ENAHO": "sumaria",
+      "Grupo": "territorio",
+      "Definición": "1 si el estrato es 6, 7 u 8 (centros poblados de menos de 2 000 habitantes)",
+      "Teoría": "Estructuralismo (Sosa Escudero, 2023)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "departamento",
+      "Etiqueta": "Departamento",
+      "Módulo ENAHO": "sumaria",
+      "Grupo": "territorio",
+      "Definición": "Primeros dos dígitos del UBIGEO",
+      "Teoría": "Estructuralismo (Sosa Escudero, 2023)",
+      "Signo esperado": "±"
+    },
+    {
+      "Variable": "covid",
+      "Etiqueta": "Año de la COVID-19 (2020)",
+      "Módulo ENAHO": "sumaria",
+      "Grupo": "territorio",
+      "Definición": "1 si el año es 2020",
+      "Teoría": "Dinámica y choques (Cantó et al., 2012)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "mieperho",
+      "Etiqueta": "Miembros del hogar",
+      "Módulo ENAHO": "sumaria",
+      "Grupo": "demografia",
+      "Definición": "Total de miembros del hogar (excluye trabajadores del hogar y pensionistas)",
+      "Teoría": "Tamaño y composición del hogar (Lanjouw y Ravallion, 1995)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "n_menores",
+      "Etiqueta": "Menores de 18 años",
+      "Módulo ENAHO": "miembros",
+      "Grupo": "demografia",
+      "Definición": "Residentes habituales menores de 18 años",
+      "Teoría": "Tamaño y composición del hogar (Lanjouw y Ravallion, 1995)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "n_mayores",
+      "Etiqueta": "Mayores de 65 años",
+      "Módulo ENAHO": "miembros",
+      "Grupo": "demografia",
+      "Definición": "Residentes habituales de 65 años o más",
+      "Teoría": "Tamaño y composición del hogar (Lanjouw y Ravallion, 1995)",
+      "Signo esperado": "±"
+    },
+    {
+      "Variable": "ratio_dependencia",
+      "Etiqueta": "Razón de dependencia",
+      "Módulo ENAHO": "miembros",
+      "Grupo": "demografia",
+      "Definición": "(menores de 15 + mayores de 64) / residentes de 15 a 64 años",
+      "Teoría": "Tamaño y composición del hogar (Lanjouw y Ravallion, 1995)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "jefe_mujer",
+      "Etiqueta": "Jefatura femenina",
+      "Módulo ENAHO": "miembros",
+      "Grupo": "demografia",
+      "Definición": "1 si la jefatura del hogar es femenina (P203 = 1 y P207 = 2)",
+      "Teoría": "Tamaño y composición del hogar (Lanjouw y Ravallion, 1995)",
+      "Signo esperado": "±"
+    },
+    {
+      "Variable": "edad_jefe",
+      "Etiqueta": "Edad del jefe del hogar",
+      "Módulo ENAHO": "miembros",
+      "Grupo": "demografia",
+      "Definición": "Edad del jefe o jefa del hogar en años (P208A)",
+      "Teoría": "Tamaño y composición del hogar (Lanjouw y Ravallion, 1995)",
+      "Signo esperado": "±"
+    },
+    {
+      "Variable": "educ_prom",
+      "Etiqueta": "Años de estudio promedio",
+      "Módulo ENAHO": "educacion",
+      "Grupo": "capital_humano",
+      "Definición": "Promedio de años de estudio de los miembros de 15 años o más (desde P301A)",
+      "Teoría": "Capacidades (Sen, 1995)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "educ_max",
+      "Etiqueta": "Años de estudio máximos",
+      "Módulo ENAHO": "educacion",
+      "Grupo": "capital_humano",
+      "Definición": "Máximo de años de estudio en el hogar",
+      "Teoría": "Capacidades (Sen, 1995)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "tasa_analfabetismo",
+      "Etiqueta": "Analfabetismo",
+      "Módulo ENAHO": "educacion",
+      "Grupo": "capital_humano",
+      "Definición": "Proporción de miembros de 15 años o más que no saben leer ni escribir (P302 = 2)",
+      "Teoría": "Capacidades (Sen, 1995)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "asistencia_menores",
+      "Etiqueta": "Asistencia escolar",
+      "Módulo ENAHO": "educacion",
+      "Grupo": "capital_humano",
+      "Definición": "Proporción de miembros de 6 a 17 años matriculados este año (P306 = 1)",
+      "Teoría": "Capacidades (Sen, 1995)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "tiene_seguro",
+      "Etiqueta": "Algún seguro de salud",
+      "Módulo ENAHO": "salud",
+      "Grupo": "salud",
+      "Definición": "1 si algún miembro tiene cualquier seguro de salud (P4191–P4198 = 1)",
+      "Teoría": "Capacidades (Sen, 1995)",
+      "Signo esperado": "±"
+    },
+    {
+      "Variable": "solo_sis",
+      "Etiqueta": "Solo SIS",
+      "Módulo ENAHO": "salud",
+      "Grupo": "salud",
+      "Definición": "Proporción de miembros cuyo único seguro es el SIS (P4195 = 1)",
+      "Teoría": "Protección social focalizada",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "n_cronicos",
+      "Etiqueta": "Enfermos crónicos",
+      "Módulo ENAHO": "salud",
+      "Grupo": "salud",
+      "Definición": "Miembros con enfermedad o malestar crónico (P401 = 1)",
+      "Teoría": "Capacidades (Sen, 1995)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "tasa_ocupacion",
+      "Etiqueta": "Tasa de ocupación",
+      "Módulo ENAHO": "empleo",
+      "Grupo": "trabajo",
+      "Definición": "Ocupados (OCU500 = 1) / miembros de 14 años o más",
+      "Teoría": "Círculo de la pobreza (Myrdal, 1957)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "n_informales",
+      "Etiqueta": "Ocupados informales",
+      "Módulo ENAHO": "empleo",
+      "Grupo": "trabajo",
+      "Definición": "Ocupados con empleo informal (criterio OIT reconstruido: negocio sin RUC o asalariado sin pensión; la ENAHO 2024 no publica OCUPINF)",
+      "Teoría": "Círculo de la pobreza (Myrdal, 1957)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "tasa_informalidad",
+      "Etiqueta": "Tasa de informalidad",
+      "Módulo ENAHO": "empleo",
+      "Grupo": "trabajo",
+      "Definición": "Informales / ocupados (0 si no hay ocupados)",
+      "Teoría": "Círculo de la pobreza (Myrdal, 1957)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "jefe_independiente",
+      "Etiqueta": "Jefe independiente",
+      "Módulo ENAHO": "empleo",
+      "Grupo": "trabajo",
+      "Definición": "1 si el jefe es trabajador independiente o familiar no remunerado (P507 = 2 o 5)",
+      "Teoría": "Círculo de la pobreza (Myrdal, 1957)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "tipo_vivienda",
+      "Etiqueta": "Tipo de vivienda",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "vivienda",
+      "Definición": "P101: tipo de vivienda (1 casa independiente … 8 otro)",
+      "Teoría": "Focalización por proxy (Grosh y Baker, 1995; Brown et al., 2018)",
+      "Signo esperado": "±"
+    },
+    {
+      "Variable": "pared_precaria",
+      "Etiqueta": "Pared precaria",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "vivienda",
+      "Definición": "1 si P102 es quincha, piedra con barro, madera, triplay/estera u otro (5–9)",
+      "Teoría": "Enfoque multidimensional (Alkire y Foster, 2011)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "piso_tierra",
+      "Etiqueta": "Piso de tierra",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "vivienda",
+      "Definición": "1 si P103 = 6 (tierra)",
+      "Teoría": "Enfoque multidimensional (Alkire y Foster, 2011)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "habitaciones",
+      "Etiqueta": "Habitaciones",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "vivienda",
+      "Definición": "P104: habitaciones sin contar baño, cocina ni pasadizos",
+      "Teoría": "Focalización por proxy (Grosh y Baker, 1995; Brown et al., 2018)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "hacinamiento",
+      "Etiqueta": "Hacinamiento",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "vivienda",
+      "Definición": "MIEPERHO / P104 (recortado en 10)",
+      "Teoría": "Enfoque multidimensional (Alkire y Foster, 2011)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "alquiler_imputado",
+      "Etiqueta": "Alquiler estimado (P106)",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "vivienda",
+      "Definición": "P106: alquiler mensual estimado (S/). Se prueba también sin ella (posible vínculo con el gasto)",
+      "Teoría": "Focalización por proxy (Grosh y Baker, 1995; Brown et al., 2018)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "agua_red",
+      "Etiqueta": "Agua de red pública",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "servicios",
+      "Definición": "1 si P110 = 1 o 2 (red pública)",
+      "Teoría": "Enfoque multidimensional (Alkire y Foster, 2011)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "desague_red",
+      "Etiqueta": "Desagüe de red pública",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "servicios",
+      "Definición": "1 si P111A = 1 o 2 (red pública de desagüe)",
+      "Teoría": "Enfoque multidimensional (Alkire y Foster, 2011)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "electricidad",
+      "Etiqueta": "Electricidad",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "servicios",
+      "Definición": "1 si P1121 = 1",
+      "Teoría": "Enfoque multidimensional (Alkire y Foster, 2011)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "combustible_solido",
+      "Etiqueta": "Cocina con leña o carbón",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "servicios",
+      "Definición": "1 si cocina con carbón, leña o bosta (P1135, P1136 o P1139 = 1)",
+      "Teoría": "Enfoque multidimensional (Alkire y Foster, 2011)",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "celular",
+      "Etiqueta": "Celular",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "activos",
+      "Definición": "P1142 = 1",
+      "Teoría": "Focalización por proxy (Grosh y Baker, 1995; Brown et al., 2018)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "tv_cable",
+      "Etiqueta": "TV por cable",
+      "Módulo ENAHO": "vivienda",
+      "Grupo": "activos",
+      "Definición": "P1143 = 1",
+      "Teoría": "Focalización por proxy (Grosh y Baker, 1995; Brown et al., 2018)",
+      "Signo esperado": "-"
+    },
+    {
+      "Variable": "juntos",
+      "Etiqueta": "JUNTOS",
+      "Módulo ENAHO": "programas",
+      "Grupo": "programas",
+      "Definición": "P710_04 = 1 (JUNTOS, últimos 3 años)",
+      "Teoría": "Protección social focalizada",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "pension65",
+      "Etiqueta": "Pensión 65",
+      "Módulo ENAHO": "programas",
+      "Grupo": "programas",
+      "Definición": "P710_05 = 1 (Pensión 65, últimos 3 años)",
+      "Teoría": "Protección social focalizada",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "qali_warma",
+      "Etiqueta": "Qali Warma",
+      "Módulo ENAHO": "programas",
+      "Grupo": "programas",
+      "Definición": "P701_03 o P701_04 = 1 (desayunos o almuerzos escolares, últimos 3 meses)",
+      "Teoría": "Protección social focalizada",
+      "Signo esperado": "+"
+    },
+    {
+      "Variable": "vaso_leche",
+      "Etiqueta": "Vaso de Leche",
+      "Módulo ENAHO": "programas",
+      "Grupo": "programas",
+      "Definición": "P701_01 = 1 (Vaso de Leche, últimos 3 meses)",
+      "Teoría": "Protección social focalizada",
+      "Signo esperado": "+"
+    }
+  ],
+  "puente": [
+    {
+      "Teoría": "Estructuralismo (Sosa Escudero, 2023)",
+      "Variables": "Dominio geográfico, Estrato del centro poblado, Área rural, Departamento",
+      "Cantidad": 4
+    },
+    {
+      "Teoría": "Dinámica y choques (Cantó et al., 2012)",
+      "Variables": "Año de la COVID-19 (2020)",
+      "Cantidad": 1
+    },
+    {
+      "Teoría": "Tamaño y composición del hogar (Lanjouw y Ravallion, 1995)",
+      "Variables": "Miembros del hogar, Menores de 18 años, Mayores de 65 años, Razón de dependencia, Jefatura femenina, Edad del jefe del hogar",
+      "Cantidad": 6
+    },
+    {
+      "Teoría": "Capacidades (Sen, 1995)",
+      "Variables": "Años de estudio promedio, Años de estudio máximos, Analfabetismo, Asistencia escolar, Algún seguro de salud, Enfermos crónicos",
+      "Cantidad": 6
+    },
+    {
+      "Teoría": "Protección social focalizada",
+      "Variables": "Solo SIS, JUNTOS, Pensión 65, Qali Warma, Vaso de Leche",
+      "Cantidad": 5
+    },
+    {
+      "Teoría": "Círculo de la pobreza (Myrdal, 1957)",
+      "Variables": "Tasa de ocupación, Ocupados informales, Tasa de informalidad, Jefe independiente",
+      "Cantidad": 4
+    },
+    {
+      "Teoría": "Focalización por proxy (Grosh y Baker, 1995; Brown et al., 2018)",
+      "Variables": "Tipo de vivienda, Habitaciones, Alquiler estimado (P106), Celular, TV por cable",
+      "Cantidad": 5
+    },
+    {
+      "Teoría": "Enfoque multidimensional (Alkire y Foster, 2011)",
+      "Variables": "Pared precaria, Piso de tierra, Hacinamiento, Agua de red pública, Desagüe de red pública, Electricidad, Cocina con leña o carbón",
+      "Cantidad": 7
+    }
+  ],
+  "fuga": [
+    {
+      "nombre": "gashog1d",
+      "motivo": "Gasto del hogar: define la pobreza"
+    },
+    {
+      "nombre": "gashog2d",
+      "motivo": "Gasto total bruto: define la pobreza"
+    },
+    {
+      "nombre": "inghog1d",
+      "motivo": "Ingreso del hogar: muy cercano al gasto"
+    },
+    {
+      "nombre": "inghog2d",
+      "motivo": "Ingreso neto total: muy cercano al gasto"
+    },
+    {
+      "nombre": "linea",
+      "motivo": "Línea de pobreza: umbral de la definición"
+    },
+    {
+      "nombre": "linpe",
+      "motivo": "Línea de pobreza extrema: umbral de la definición"
+    },
+    {
+      "nombre": "pobreza",
+      "motivo": "Es la variable objetivo"
+    },
+    {
+      "nombre": "estrsocial",
+      "motivo": "Estrato socioeconómico construido con gasto e ingreso"
+    },
+    {
+      "nombre": "percepho",
+      "motivo": "Perceptores de ingreso: proviene del cálculo del ingreso"
+    },
+    {
+      "nombre": "anio",
+      "motivo": "El año de prueba nunca se vio en entrenamiento; el choque se capta con `covid`"
+    }
+  ],
+  "panel": [
+    {
+      "anio": 2017,
+      "hogares": 34584,
+      "pregunta_panel": 9559,
+      "llave_anio_anterior": 0,
+      "llave_cualquier_anio": 0,
+      "ambos_criterios": 0,
+      "repetidos": 9559,
+      "pct_repetidos": 27.6399
+    },
+    {
+      "anio": 2018,
+      "hogares": 37462,
+      "pregunta_panel": 9689,
+      "llave_anio_anterior": 9788,
+      "llave_cualquier_anio": 9788,
+      "ambos_criterios": 9324,
+      "repetidos": 10153,
+      "pct_repetidos": 27.1021
+    },
+    {
+      "anio": 2019,
+      "hogares": 34565,
+      "pregunta_panel": 9982,
+      "llave_anio_anterior": 10325,
+      "llave_cualquier_anio": 10759,
+      "ambos_criterios": 9692,
+      "repetidos": 10907,
+      "pct_repetidos": 31.555
+    },
+    {
+      "anio": 2020,
+      "hogares": 34490,
+      "pregunta_panel": 10132,
+      "llave_anio_anterior": 10099,
+      "llave_cualquier_anio": 10513,
+      "ambos_criterios": 9763,
+      "repetidos": 10662,
+      "pct_repetidos": 30.9133
+    },
+    {
+      "anio": 2021,
+      "hogares": 34245,
+      "pregunta_panel": 9334,
+      "llave_anio_anterior": 9519,
+      "llave_cualquier_anio": 10040,
+      "ambos_criterios": 8996,
+      "repetidos": 10165,
+      "pct_repetidos": 29.6832
+    },
+    {
+      "anio": 2022,
+      "hogares": 34213,
+      "pregunta_panel": 9430,
+      "llave_anio_anterior": 9524,
+      "llave_cualquier_anio": 9977,
+      "ambos_criterios": 9120,
+      "repetidos": 10088,
+      "pct_repetidos": 29.4859
+    },
+    {
+      "anio": 2023,
+      "hogares": 33886,
+      "pregunta_panel": 9249,
+      "llave_anio_anterior": 9284,
+      "llave_cualquier_anio": 9735,
+      "ambos_criterios": 8922,
+      "repetidos": 9860,
+      "pct_repetidos": 29.0976
+    },
+    {
+      "anio": 2024,
+      "hogares": 33691,
+      "pregunta_panel": 8816,
+      "llave_anio_anterior": 8817,
+      "llave_cualquier_anio": 9287,
+      "ambos_criterios": 8441,
+      "repetidos": 9388,
+      "pct_repetidos": 27.865
+    }
+  ],
+  "vif": [
+    {
+      "Variable": "educ_prom",
+      "VIF": 9.2772,
+      "Diagnóstico": "Moderada (5–10)"
+    },
+    {
+      "Variable": "educ_max",
+      "VIF": 8.5538,
+      "Diagnóstico": "Moderada (5–10)"
+    },
+    {
+      "Variable": "mieperho",
+      "VIF": 7.7368,
+      "Diagnóstico": "Moderada (5–10)"
+    },
+    {
+      "Variable": "n_menores",
+      "VIF": 6.909,
+      "Diagnóstico": "Moderada (5–10)"
+    },
+    {
+      "Variable": "n_mayores",
+      "VIF": 4.7574,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "estrato",
+      "VIF": 4.6713,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "rural",
+      "VIF": 4.321,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "n_informales",
+      "VIF": 4.1895,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "ratio_dependencia",
+      "VIF": 3.5597,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "tasa_informalidad",
+      "VIF": 3.1969,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "hacinamiento",
+      "VIF": 3.192,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "habitaciones",
+      "VIF": 2.6355,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "edad_jefe",
+      "VIF": 2.4799,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "solo_sis",
+      "VIF": 2.3225,
+      "Diagnóstico": "Baja (< 5)"
+    },
+    {
+      "Variable": "desague_red",
+      "VIF": 2.152,
+      "Diagnóstico": "Baja (< 5)"
+    }
+  ]
+}

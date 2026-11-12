@@ -1,0 +1,1631 @@
+{
+  "incidencia": [
+    {
+      "anio": 2017,
+      "departamento": "01",
+      "nombre": "Amazonas",
+      "tasa_personas": 34.8803,
+      "hogares_muestra": 1239
+    },
+    {
+      "anio": 2017,
+      "departamento": "02",
+      "nombre": "Áncash",
+      "tasa_personas": 22.3566,
+      "hogares_muestra": 1399
+    },
+    {
+      "anio": 2017,
+      "departamento": "03",
+      "nombre": "Apurímac",
+      "tasa_personas": 35.9015,
+      "hogares_muestra": 926
+    },
+    {
+      "anio": 2017,
+      "departamento": "04",
+      "nombre": "Arequipa",
+      "tasa_personas": 8.0602,
+      "hogares_muestra": 1573
+    },
+    {
+      "anio": 2017,
+      "departamento": "05",
+      "nombre": "Ayacucho",
+      "tasa_personas": 35.607,
+      "hogares_muestra": 1152
+    },
+    {
+      "anio": 2017,
+      "departamento": "06",
+      "nombre": "Cajamarca",
+      "tasa_personas": 47.5328,
+      "hogares_muestra": 1480
+    },
+    {
+      "anio": 2017,
+      "departamento": "07",
+      "nombre": "Callao",
+      "tasa_personas": 15.9914,
+      "hogares_muestra": 1019
+    },
+    {
+      "anio": 2017,
+      "departamento": "08",
+      "nombre": "Cusco",
+      "tasa_personas": 25.2498,
+      "hogares_muestra": 1234
+    },
+    {
+      "anio": 2017,
+      "departamento": "09",
+      "nombre": "Huancavelica",
+      "tasa_personas": 38.8826,
+      "hogares_muestra": 1031
+    },
+    {
+      "anio": 2017,
+      "departamento": "10",
+      "nombre": "Huánuco",
+      "tasa_personas": 34.2953,
+      "hogares_muestra": 1263
+    },
+    {
+      "anio": 2017,
+      "departamento": "11",
+      "nombre": "Ica",
+      "tasa_personas": 3.2776,
+      "hogares_muestra": 1553
+    },
+    {
+      "anio": 2017,
+      "departamento": "12",
+      "nombre": "Junín",
+      "tasa_personas": 21.2076,
+      "hogares_muestra": 1537
+    },
+    {
+      "anio": 2017,
+      "departamento": "13",
+      "nombre": "La Libertad",
+      "tasa_personas": 23.4838,
+      "hogares_muestra": 1603
+    },
+    {
+      "anio": 2017,
+      "departamento": "14",
+      "nombre": "Lambayeque",
+      "tasa_personas": 18.4887,
+      "hogares_muestra": 1453
+    },
+    {
+      "anio": 2017,
+      "departamento": "15",
+      "nombre": "Lima",
+      "tasa_personas": 13.1706,
+      "hogares_muestra": 4513
+    },
+    {
+      "anio": 2017,
+      "departamento": "16",
+      "nombre": "Loreto",
+      "tasa_personas": 35.3188,
+      "hogares_muestra": 1505
+    },
+    {
+      "anio": 2017,
+      "departamento": "17",
+      "nombre": "Madre de Dios",
+      "tasa_personas": 4.5666,
+      "hogares_muestra": 631
+    },
+    {
+      "anio": 2017,
+      "departamento": "18",
+      "nombre": "Moquegua",
+      "tasa_personas": 9.2012,
+      "hogares_muestra": 974
+    },
+    {
+      "anio": 2017,
+      "departamento": "19",
+      "nombre": "Pasco",
+      "tasa_personas": 38.5475,
+      "hogares_muestra": 917
+    },
+    {
+      "anio": 2017,
+      "departamento": "20",
+      "nombre": "Piura",
+      "tasa_personas": 28.6554,
+      "hogares_muestra": 1662
+    },
+    {
+      "anio": 2017,
+      "departamento": "21",
+      "nombre": "Puno",
+      "tasa_personas": 32.7235,
+      "hogares_muestra": 1183
+    },
+    {
+      "anio": 2017,
+      "departamento": "22",
+      "nombre": "San Martín",
+      "tasa_personas": 26.0961,
+      "hogares_muestra": 1357
+    },
+    {
+      "anio": 2017,
+      "departamento": "23",
+      "nombre": "Tacna",
+      "tasa_personas": 13.9202,
+      "hogares_muestra": 1351
+    },
+    {
+      "anio": 2017,
+      "departamento": "24",
+      "nombre": "Tumbes",
+      "tasa_personas": 11.8283,
+      "hogares_muestra": 869
+    },
+    {
+      "anio": 2017,
+      "departamento": "25",
+      "nombre": "Ucayali",
+      "tasa_personas": 13.8862,
+      "hogares_muestra": 1160
+    },
+    {
+      "anio": 2018,
+      "departamento": "01",
+      "nombre": "Amazonas",
+      "tasa_personas": 33.5129,
+      "hogares_muestra": 1225
+    },
+    {
+      "anio": 2018,
+      "departamento": "02",
+      "nombre": "Áncash",
+      "tasa_personas": 20.3144,
+      "hogares_muestra": 1934
+    },
+    {
+      "anio": 2018,
+      "departamento": "03",
+      "nombre": "Apurímac",
+      "tasa_personas": 31.7672,
+      "hogares_muestra": 950
+    },
+    {
+      "anio": 2018,
+      "departamento": "04",
+      "nombre": "Arequipa",
+      "tasa_personas": 8.5791,
+      "hogares_muestra": 2427
+    },
+    {
+      "anio": 2018,
+      "departamento": "05",
+      "nombre": "Ayacucho",
+      "tasa_personas": 37.4632,
+      "hogares_muestra": 1192
+    },
+    {
+      "anio": 2018,
+      "departamento": "06",
+      "nombre": "Cajamarca",
+      "tasa_personas": 41.883,
+      "hogares_muestra": 1467
+    },
+    {
+      "anio": 2018,
+      "departamento": "07",
+      "nombre": "Callao",
+      "tasa_personas": 16.035,
+      "hogares_muestra": 1011
+    },
+    {
+      "anio": 2018,
+      "departamento": "08",
+      "nombre": "Cusco",
+      "tasa_personas": 22.9436,
+      "hogares_muestra": 1293
+    },
+    {
+      "anio": 2018,
+      "departamento": "09",
+      "nombre": "Huancavelica",
+      "tasa_personas": 38.7221,
+      "hogares_muestra": 1039
+    },
+    {
+      "anio": 2018,
+      "departamento": "10",
+      "nombre": "Huánuco",
+      "tasa_personas": 29.8619,
+      "hogares_muestra": 1288
+    },
+    {
+      "anio": 2018,
+      "departamento": "11",
+      "nombre": "Ica",
+      "tasa_personas": 3.0718,
+      "hogares_muestra": 1554
+    },
+    {
+      "anio": 2018,
+      "departamento": "12",
+      "nombre": "Junín",
+      "tasa_personas": 21.4765,
+      "hogares_muestra": 1567
+    },
+    {
+      "anio": 2018,
+      "departamento": "13",
+      "nombre": "La Libertad",
+      "tasa_personas": 20.8306,
+      "hogares_muestra": 1566
+    },
+    {
+      "anio": 2018,
+      "departamento": "14",
+      "nombre": "Lambayeque",
+      "tasa_personas": 11.9945,
+      "hogares_muestra": 1437
+    },
+    {
+      "anio": 2018,
+      "departamento": "15",
+      "nombre": "Lima",
+      "tasa_personas": 12.9267,
+      "hogares_muestra": 4519
+    },
+    {
+      "anio": 2018,
+      "departamento": "16",
+      "nombre": "Loreto",
+      "tasa_personas": 32.717,
+      "hogares_muestra": 1488
+    },
+    {
+      "anio": 2018,
+      "departamento": "17",
+      "nombre": "Madre de Dios",
+      "tasa_personas": 3.2153,
+      "hogares_muestra": 985
+    },
+    {
+      "anio": 2018,
+      "departamento": "18",
+      "nombre": "Moquegua",
+      "tasa_personas": 8.691,
+      "hogares_muestra": 997
+    },
+    {
+      "anio": 2018,
+      "departamento": "19",
+      "nombre": "Pasco",
+      "tasa_personas": 34.9907,
+      "hogares_muestra": 1279
+    },
+    {
+      "anio": 2018,
+      "departamento": "20",
+      "nombre": "Piura",
+      "tasa_personas": 27.5334,
+      "hogares_muestra": 1661
+    },
+    {
+      "anio": 2018,
+      "departamento": "21",
+      "nombre": "Puno",
+      "tasa_personas": 36.9873,
+      "hogares_muestra": 1838
+    },
+    {
+      "anio": 2018,
+      "departamento": "22",
+      "nombre": "San Martín",
+      "tasa_personas": 24.8919,
+      "hogares_muestra": 1342
+    },
+    {
+      "anio": 2018,
+      "departamento": "23",
+      "nombre": "Tacna",
+      "tasa_personas": 13.5762,
+      "hogares_muestra": 1371
+    },
+    {
+      "anio": 2018,
+      "departamento": "24",
+      "nombre": "Tumbes",
+      "tasa_personas": 10.904,
+      "hogares_muestra": 864
+    },
+    {
+      "anio": 2018,
+      "departamento": "25",
+      "nombre": "Ucayali",
+      "tasa_personas": 10.634,
+      "hogares_muestra": 1168
+    },
+    {
+      "anio": 2019,
+      "departamento": "01",
+      "nombre": "Amazonas",
+      "tasa_personas": 30.4887,
+      "hogares_muestra": 1229
+    },
+    {
+      "anio": 2019,
+      "departamento": "02",
+      "nombre": "Áncash",
+      "tasa_personas": 17.5417,
+      "hogares_muestra": 1421
+    },
+    {
+      "anio": 2019,
+      "departamento": "03",
+      "nombre": "Apurímac",
+      "tasa_personas": 29.0863,
+      "hogares_muestra": 959
+    },
+    {
+      "anio": 2019,
+      "departamento": "04",
+      "nombre": "Arequipa",
+      "tasa_personas": 6.0091,
+      "hogares_muestra": 1560
+    },
+    {
+      "anio": 2019,
+      "departamento": "05",
+      "nombre": "Ayacucho",
+      "tasa_personas": 39.3552,
+      "hogares_muestra": 1169
+    },
+    {
+      "anio": 2019,
+      "departamento": "06",
+      "nombre": "Cajamarca",
+      "tasa_personas": 37.9599,
+      "hogares_muestra": 1442
+    },
+    {
+      "anio": 2019,
+      "departamento": "07",
+      "nombre": "Callao",
+      "tasa_personas": 14.3444,
+      "hogares_muestra": 1009
+    },
+    {
+      "anio": 2019,
+      "departamento": "08",
+      "nombre": "Cusco",
+      "tasa_personas": 23.0005,
+      "hogares_muestra": 1278
+    },
+    {
+      "anio": 2019,
+      "departamento": "09",
+      "nombre": "Huancavelica",
+      "tasa_personas": 36.9098,
+      "hogares_muestra": 1032
+    },
+    {
+      "anio": 2019,
+      "departamento": "10",
+      "nombre": "Huánuco",
+      "tasa_personas": 29.3688,
+      "hogares_muestra": 1277
+    },
+    {
+      "anio": 2019,
+      "departamento": "11",
+      "nombre": "Ica",
+      "tasa_personas": 2.5791,
+      "hogares_muestra": 1563
+    },
+    {
+      "anio": 2019,
+      "departamento": "12",
+      "nombre": "Junín",
+      "tasa_personas": 20.66,
+      "hogares_muestra": 1571
+    },
+    {
+      "anio": 2019,
+      "departamento": "13",
+      "nombre": "La Libertad",
+      "tasa_personas": 24.7295,
+      "hogares_muestra": 1585
+    },
+    {
+      "anio": 2019,
+      "departamento": "14",
+      "nombre": "Lambayeque",
+      "tasa_personas": 10.22,
+      "hogares_muestra": 1428
+    },
+    {
+      "anio": 2019,
+      "departamento": "15",
+      "nombre": "Lima",
+      "tasa_personas": 14.2101,
+      "hogares_muestra": 4514
+    },
+    {
+      "anio": 2019,
+      "departamento": "16",
+      "nombre": "Loreto",
+      "tasa_personas": 32.1627,
+      "hogares_muestra": 1468
+    },
+    {
+      "anio": 2019,
+      "departamento": "17",
+      "nombre": "Madre de Dios",
+      "tasa_personas": 9.1511,
+      "hogares_muestra": 642
+    },
+    {
+      "anio": 2019,
+      "departamento": "18",
+      "nombre": "Moquegua",
+      "tasa_personas": 9.2335,
+      "hogares_muestra": 971
+    },
+    {
+      "anio": 2019,
+      "departamento": "19",
+      "nombre": "Pasco",
+      "tasa_personas": 30.315,
+      "hogares_muestra": 889
+    },
+    {
+      "anio": 2019,
+      "departamento": "20",
+      "nombre": "Piura",
+      "tasa_personas": 24.1822,
+      "hogares_muestra": 1655
+    },
+    {
+      "anio": 2019,
+      "departamento": "21",
+      "nombre": "Puno",
+      "tasa_personas": 34.6727,
+      "hogares_muestra": 1202
+    },
+    {
+      "anio": 2019,
+      "departamento": "22",
+      "nombre": "San Martín",
+      "tasa_personas": 25.3767,
+      "hogares_muestra": 1335
+    },
+    {
+      "anio": 2019,
+      "departamento": "23",
+      "nombre": "Tacna",
+      "tasa_personas": 13.2769,
+      "hogares_muestra": 1348
+    },
+    {
+      "anio": 2019,
+      "departamento": "24",
+      "nombre": "Tumbes",
+      "tasa_personas": 13.6876,
+      "hogares_muestra": 854
+    },
+    {
+      "anio": 2019,
+      "departamento": "25",
+      "nombre": "Ucayali",
+      "tasa_personas": 12.3235,
+      "hogares_muestra": 1164
+    },
+    {
+      "anio": 2020,
+      "departamento": "01",
+      "nombre": "Amazonas",
+      "tasa_personas": 36.1187,
+      "hogares_muestra": 1222
+    },
+    {
+      "anio": 2020,
+      "departamento": "02",
+      "nombre": "Áncash",
+      "tasa_personas": 29.8279,
+      "hogares_muestra": 1463
+    },
+    {
+      "anio": 2020,
+      "departamento": "03",
+      "nombre": "Apurímac",
+      "tasa_personas": 35.4679,
+      "hogares_muestra": 954
+    },
+    {
+      "anio": 2020,
+      "departamento": "04",
+      "nombre": "Arequipa",
+      "tasa_personas": 18.5648,
+      "hogares_muestra": 1585
+    },
+    {
+      "anio": 2020,
+      "departamento": "05",
+      "nombre": "Ayacucho",
+      "tasa_personas": 46.3663,
+      "hogares_muestra": 1217
+    },
+    {
+      "anio": 2020,
+      "departamento": "06",
+      "nombre": "Cajamarca",
+      "tasa_personas": 42.533,
+      "hogares_muestra": 1455
+    },
+    {
+      "anio": 2020,
+      "departamento": "07",
+      "nombre": "Callao",
+      "tasa_personas": 35.0184,
+      "hogares_muestra": 1004
+    },
+    {
+      "anio": 2020,
+      "departamento": "08",
+      "nombre": "Cusco",
+      "tasa_personas": 32.1401,
+      "hogares_muestra": 1286
+    },
+    {
+      "anio": 2020,
+      "departamento": "09",
+      "nombre": "Huancavelica",
+      "tasa_personas": 47.6689,
+      "hogares_muestra": 1047
+    },
+    {
+      "anio": 2020,
+      "departamento": "10",
+      "nombre": "Huánuco",
+      "tasa_personas": 42.5623,
+      "hogares_muestra": 1277
+    },
+    {
+      "anio": 2020,
+      "departamento": "11",
+      "nombre": "Ica",
+      "tasa_personas": 8.5108,
+      "hogares_muestra": 1527
+    },
+    {
+      "anio": 2020,
+      "departamento": "12",
+      "nombre": "Junín",
+      "tasa_personas": 31.4006,
+      "hogares_muestra": 1530
+    },
+    {
+      "anio": 2020,
+      "departamento": "13",
+      "nombre": "La Libertad",
+      "tasa_personas": 31.9297,
+      "hogares_muestra": 1575
+    },
+    {
+      "anio": 2020,
+      "departamento": "14",
+      "nombre": "Lambayeque",
+      "tasa_personas": 15.7695,
+      "hogares_muestra": 1470
+    },
+    {
+      "anio": 2020,
+      "departamento": "15",
+      "nombre": "Lima",
+      "tasa_personas": 26.6117,
+      "hogares_muestra": 4449
+    },
+    {
+      "anio": 2020,
+      "departamento": "16",
+      "nombre": "Loreto",
+      "tasa_personas": 33.0998,
+      "hogares_muestra": 1475
+    },
+    {
+      "anio": 2020,
+      "departamento": "17",
+      "nombre": "Madre de Dios",
+      "tasa_personas": 11.2865,
+      "hogares_muestra": 612
+    },
+    {
+      "anio": 2020,
+      "departamento": "18",
+      "nombre": "Moquegua",
+      "tasa_personas": 18.2178,
+      "hogares_muestra": 989
+    },
+    {
+      "anio": 2020,
+      "departamento": "19",
+      "nombre": "Pasco",
+      "tasa_personas": 44.8385,
+      "hogares_muestra": 902
+    },
+    {
+      "anio": 2020,
+      "departamento": "20",
+      "nombre": "Piura",
+      "tasa_personas": 34.9789,
+      "hogares_muestra": 1680
+    },
+    {
+      "anio": 2020,
+      "departamento": "21",
+      "nombre": "Puno",
+      "tasa_personas": 42.5169,
+      "hogares_muestra": 1153
+    },
+    {
+      "anio": 2020,
+      "departamento": "22",
+      "nombre": "San Martín",
+      "tasa_personas": 26.0043,
+      "hogares_muestra": 1292
+    },
+    {
+      "anio": 2020,
+      "departamento": "23",
+      "nombre": "Tacna",
+      "tasa_personas": 23.245,
+      "hogares_muestra": 1329
+    },
+    {
+      "anio": 2020,
+      "departamento": "24",
+      "nombre": "Tumbes",
+      "tasa_personas": 32.5772,
+      "hogares_muestra": 832
+    },
+    {
+      "anio": 2020,
+      "departamento": "25",
+      "nombre": "Ucayali",
+      "tasa_personas": 21.1824,
+      "hogares_muestra": 1165
+    },
+    {
+      "anio": 2021,
+      "departamento": "01",
+      "nombre": "Amazonas",
+      "tasa_personas": 30.0964,
+      "hogares_muestra": 1254
+    },
+    {
+      "anio": 2021,
+      "departamento": "02",
+      "nombre": "Áncash",
+      "tasa_personas": 21.8616,
+      "hogares_muestra": 1433
+    },
+    {
+      "anio": 2021,
+      "departamento": "03",
+      "nombre": "Apurímac",
+      "tasa_personas": 28.298,
+      "hogares_muestra": 960
+    },
+    {
+      "anio": 2021,
+      "departamento": "04",
+      "nombre": "Arequipa",
+      "tasa_personas": 12.0426,
+      "hogares_muestra": 1534
+    },
+    {
+      "anio": 2021,
+      "departamento": "05",
+      "nombre": "Ayacucho",
+      "tasa_personas": 36.0185,
+      "hogares_muestra": 1182
+    },
+    {
+      "anio": 2021,
+      "departamento": "06",
+      "nombre": "Cajamarca",
+      "tasa_personas": 39.7338,
+      "hogares_muestra": 1453
+    },
+    {
+      "anio": 2021,
+      "departamento": "07",
+      "nombre": "Callao",
+      "tasa_personas": 28.5249,
+      "hogares_muestra": 982
+    },
+    {
+      "anio": 2021,
+      "departamento": "08",
+      "nombre": "Cusco",
+      "tasa_personas": 22.0055,
+      "hogares_muestra": 1259
+    },
+    {
+      "anio": 2021,
+      "departamento": "09",
+      "nombre": "Huancavelica",
+      "tasa_personas": 41.2058,
+      "hogares_muestra": 1036
+    },
+    {
+      "anio": 2021,
+      "departamento": "10",
+      "nombre": "Huánuco",
+      "tasa_personas": 35.4887,
+      "hogares_muestra": 1269
+    },
+    {
+      "anio": 2021,
+      "departamento": "11",
+      "nombre": "Ica",
+      "tasa_personas": 6.5731,
+      "hogares_muestra": 1542
+    },
+    {
+      "anio": 2021,
+      "departamento": "12",
+      "nombre": "Junín",
+      "tasa_personas": 26.3642,
+      "hogares_muestra": 1531
+    },
+    {
+      "anio": 2021,
+      "departamento": "13",
+      "nombre": "La Libertad",
+      "tasa_personas": 26.7632,
+      "hogares_muestra": 1538
+    },
+    {
+      "anio": 2021,
+      "departamento": "14",
+      "nombre": "Lambayeque",
+      "tasa_personas": 13.9604,
+      "hogares_muestra": 1434
+    },
+    {
+      "anio": 2021,
+      "departamento": "15",
+      "nombre": "Lima",
+      "tasa_personas": 24.619,
+      "hogares_muestra": 4525
+    },
+    {
+      "anio": 2021,
+      "departamento": "16",
+      "nombre": "Loreto",
+      "tasa_personas": 34.6066,
+      "hogares_muestra": 1388
+    },
+    {
+      "anio": 2021,
+      "departamento": "17",
+      "nombre": "Madre de Dios",
+      "tasa_personas": 7.7056,
+      "hogares_muestra": 621
+    },
+    {
+      "anio": 2021,
+      "departamento": "18",
+      "nombre": "Moquegua",
+      "tasa_personas": 10.1736,
+      "hogares_muestra": 982
+    },
+    {
+      "anio": 2021,
+      "departamento": "19",
+      "nombre": "Pasco",
+      "tasa_personas": 42.1151,
+      "hogares_muestra": 886
+    },
+    {
+      "anio": 2021,
+      "departamento": "20",
+      "nombre": "Piura",
+      "tasa_personas": 25.3057,
+      "hogares_muestra": 1632
+    },
+    {
+      "anio": 2021,
+      "departamento": "21",
+      "nombre": "Puno",
+      "tasa_personas": 42.5972,
+      "hogares_muestra": 1143
+    },
+    {
+      "anio": 2021,
+      "departamento": "22",
+      "nombre": "San Martín",
+      "tasa_personas": 20.314,
+      "hogares_muestra": 1334
+    },
+    {
+      "anio": 2021,
+      "departamento": "23",
+      "nombre": "Tacna",
+      "tasa_personas": 21.7616,
+      "hogares_muestra": 1321
+    },
+    {
+      "anio": 2021,
+      "departamento": "24",
+      "nombre": "Tumbes",
+      "tasa_personas": 19.335,
+      "hogares_muestra": 863
+    },
+    {
+      "anio": 2021,
+      "departamento": "25",
+      "nombre": "Ucayali",
+      "tasa_personas": 17.0231,
+      "hogares_muestra": 1143
+    },
+    {
+      "anio": 2022,
+      "departamento": "01",
+      "nombre": "Amazonas",
+      "tasa_personas": 28.0031,
+      "hogares_muestra": 1265
+    },
+    {
+      "anio": 2022,
+      "departamento": "02",
+      "nombre": "Áncash",
+      "tasa_personas": 21.4662,
+      "hogares_muestra": 1409
+    },
+    {
+      "anio": 2022,
+      "departamento": "03",
+      "nombre": "Apurímac",
+      "tasa_personas": 24.6581,
+      "hogares_muestra": 947
+    },
+    {
+      "anio": 2022,
+      "departamento": "04",
+      "nombre": "Arequipa",
+      "tasa_personas": 13.6886,
+      "hogares_muestra": 1539
+    },
+    {
+      "anio": 2022,
+      "departamento": "05",
+      "nombre": "Ayacucho",
+      "tasa_personas": 40.4899,
+      "hogares_muestra": 1145
+    },
+    {
+      "anio": 2022,
+      "departamento": "06",
+      "nombre": "Cajamarca",
+      "tasa_personas": 44.293,
+      "hogares_muestra": 1472
+    },
+    {
+      "anio": 2022,
+      "departamento": "07",
+      "nombre": "Callao",
+      "tasa_personas": 30.8185,
+      "hogares_muestra": 1006
+    },
+    {
+      "anio": 2022,
+      "departamento": "08",
+      "nombre": "Cusco",
+      "tasa_personas": 21.6489,
+      "hogares_muestra": 1233
+    },
+    {
+      "anio": 2022,
+      "departamento": "09",
+      "nombre": "Huancavelica",
+      "tasa_personas": 37.3709,
+      "hogares_muestra": 1040
+    },
+    {
+      "anio": 2022,
+      "departamento": "10",
+      "nombre": "Huánuco",
+      "tasa_personas": 42.1929,
+      "hogares_muestra": 1263
+    },
+    {
+      "anio": 2022,
+      "departamento": "11",
+      "nombre": "Ica",
+      "tasa_personas": 5.0827,
+      "hogares_muestra": 1520
+    },
+    {
+      "anio": 2022,
+      "departamento": "12",
+      "nombre": "Junín",
+      "tasa_personas": 21.4988,
+      "hogares_muestra": 1521
+    },
+    {
+      "anio": 2022,
+      "departamento": "13",
+      "nombre": "La Libertad",
+      "tasa_personas": 28.4141,
+      "hogares_muestra": 1544
+    },
+    {
+      "anio": 2022,
+      "departamento": "14",
+      "nombre": "Lambayeque",
+      "tasa_personas": 14.1347,
+      "hogares_muestra": 1412
+    },
+    {
+      "anio": 2022,
+      "departamento": "15",
+      "nombre": "Lima",
+      "tasa_personas": 26.5162,
+      "hogares_muestra": 4552
+    },
+    {
+      "anio": 2022,
+      "departamento": "16",
+      "nombre": "Loreto",
+      "tasa_personas": 39.791,
+      "hogares_muestra": 1389
+    },
+    {
+      "anio": 2022,
+      "departamento": "17",
+      "nombre": "Madre de Dios",
+      "tasa_personas": 13.6467,
+      "hogares_muestra": 615
+    },
+    {
+      "anio": 2022,
+      "departamento": "18",
+      "nombre": "Moquegua",
+      "tasa_personas": 12.8389,
+      "hogares_muestra": 989
+    },
+    {
+      "anio": 2022,
+      "departamento": "19",
+      "nombre": "Pasco",
+      "tasa_personas": 40.0837,
+      "hogares_muestra": 879
+    },
+    {
+      "anio": 2022,
+      "departamento": "20",
+      "nombre": "Piura",
+      "tasa_personas": 30.4255,
+      "hogares_muestra": 1630
+    },
+    {
+      "anio": 2022,
+      "departamento": "21",
+      "nombre": "Puno",
+      "tasa_personas": 40.9945,
+      "hogares_muestra": 1141
+    },
+    {
+      "anio": 2022,
+      "departamento": "22",
+      "nombre": "San Martín",
+      "tasa_personas": 25.291,
+      "hogares_muestra": 1365
+    },
+    {
+      "anio": 2022,
+      "departamento": "23",
+      "nombre": "Tacna",
+      "tasa_personas": 23.463,
+      "hogares_muestra": 1321
+    },
+    {
+      "anio": 2022,
+      "departamento": "24",
+      "nombre": "Tumbes",
+      "tasa_personas": 24.8123,
+      "hogares_muestra": 861
+    },
+    {
+      "anio": 2022,
+      "departamento": "25",
+      "nombre": "Ucayali",
+      "tasa_personas": 22.4714,
+      "hogares_muestra": 1155
+    },
+    {
+      "anio": 2023,
+      "departamento": "01",
+      "nombre": "Amazonas",
+      "tasa_personas": 25.7683,
+      "hogares_muestra": 1253
+    },
+    {
+      "anio": 2023,
+      "departamento": "02",
+      "nombre": "Áncash",
+      "tasa_personas": 24.9626,
+      "hogares_muestra": 1418
+    },
+    {
+      "anio": 2023,
+      "departamento": "03",
+      "nombre": "Apurímac",
+      "tasa_personas": 25.8065,
+      "hogares_muestra": 915
+    },
+    {
+      "anio": 2023,
+      "departamento": "04",
+      "nombre": "Arequipa",
+      "tasa_personas": 13.8672,
+      "hogares_muestra": 1517
+    },
+    {
+      "anio": 2023,
+      "departamento": "05",
+      "nombre": "Ayacucho",
+      "tasa_personas": 39.3972,
+      "hogares_muestra": 1152
+    },
+    {
+      "anio": 2023,
+      "departamento": "06",
+      "nombre": "Cajamarca",
+      "tasa_personas": 44.477,
+      "hogares_muestra": 1451
+    },
+    {
+      "anio": 2023,
+      "departamento": "07",
+      "nombre": "Callao",
+      "tasa_personas": 34.1507,
+      "hogares_muestra": 1034
+    },
+    {
+      "anio": 2023,
+      "departamento": "08",
+      "nombre": "Cusco",
+      "tasa_personas": 21.7462,
+      "hogares_muestra": 1224
+    },
+    {
+      "anio": 2023,
+      "departamento": "09",
+      "nombre": "Huancavelica",
+      "tasa_personas": 39.5183,
+      "hogares_muestra": 1038
+    },
+    {
+      "anio": 2023,
+      "departamento": "10",
+      "nombre": "Huánuco",
+      "tasa_personas": 39.1874,
+      "hogares_muestra": 1250
+    },
+    {
+      "anio": 2023,
+      "departamento": "11",
+      "nombre": "Ica",
+      "tasa_personas": 6.9099,
+      "hogares_muestra": 1512
+    },
+    {
+      "anio": 2023,
+      "departamento": "12",
+      "nombre": "Junín",
+      "tasa_personas": 24.2812,
+      "hogares_muestra": 1507
+    },
+    {
+      "anio": 2023,
+      "departamento": "13",
+      "nombre": "La Libertad",
+      "tasa_personas": 31.6067,
+      "hogares_muestra": 1506
+    },
+    {
+      "anio": 2023,
+      "departamento": "14",
+      "nombre": "Lambayeque",
+      "tasa_personas": 17.8692,
+      "hogares_muestra": 1388
+    },
+    {
+      "anio": 2023,
+      "departamento": "15",
+      "nombre": "Lima",
+      "tasa_personas": 27.9154,
+      "hogares_muestra": 4535
+    },
+    {
+      "anio": 2023,
+      "departamento": "16",
+      "nombre": "Loreto",
+      "tasa_personas": 43.4566,
+      "hogares_muestra": 1385
+    },
+    {
+      "anio": 2023,
+      "departamento": "17",
+      "nombre": "Madre de Dios",
+      "tasa_personas": 16.5834,
+      "hogares_muestra": 606
+    },
+    {
+      "anio": 2023,
+      "departamento": "18",
+      "nombre": "Moquegua",
+      "tasa_personas": 13.1402,
+      "hogares_muestra": 963
+    },
+    {
+      "anio": 2023,
+      "departamento": "19",
+      "nombre": "Pasco",
+      "tasa_personas": 41.7232,
+      "hogares_muestra": 884
+    },
+    {
+      "anio": 2023,
+      "departamento": "20",
+      "nombre": "Piura",
+      "tasa_personas": 33.0605,
+      "hogares_muestra": 1620
+    },
+    {
+      "anio": 2023,
+      "departamento": "21",
+      "nombre": "Puno",
+      "tasa_personas": 41.6256,
+      "hogares_muestra": 1124
+    },
+    {
+      "anio": 2023,
+      "departamento": "22",
+      "nombre": "San Martín",
+      "tasa_personas": 22.6129,
+      "hogares_muestra": 1336
+    },
+    {
+      "anio": 2023,
+      "departamento": "23",
+      "nombre": "Tacna",
+      "tasa_personas": 26.7114,
+      "hogares_muestra": 1299
+    },
+    {
+      "anio": 2023,
+      "departamento": "24",
+      "nombre": "Tumbes",
+      "tasa_personas": 29.0128,
+      "hogares_muestra": 848
+    },
+    {
+      "anio": 2023,
+      "departamento": "25",
+      "nombre": "Ucayali",
+      "tasa_personas": 26.8512,
+      "hogares_muestra": 1121
+    },
+    {
+      "anio": 2024,
+      "departamento": "01",
+      "nombre": "Amazonas",
+      "tasa_personas": 25.7488,
+      "hogares_muestra": 1243
+    },
+    {
+      "anio": 2024,
+      "departamento": "02",
+      "nombre": "Áncash",
+      "tasa_personas": 22.7746,
+      "hogares_muestra": 1393
+    },
+    {
+      "anio": 2024,
+      "departamento": "03",
+      "nombre": "Apurímac",
+      "tasa_personas": 23.9587,
+      "hogares_muestra": 913
+    },
+    {
+      "anio": 2024,
+      "departamento": "04",
+      "nombre": "Arequipa",
+      "tasa_personas": 15.7844,
+      "hogares_muestra": 1506
+    },
+    {
+      "anio": 2024,
+      "departamento": "05",
+      "nombre": "Ayacucho",
+      "tasa_personas": 32.7633,
+      "hogares_muestra": 1160
+    },
+    {
+      "anio": 2024,
+      "departamento": "06",
+      "nombre": "Cajamarca",
+      "tasa_personas": 45.0069,
+      "hogares_muestra": 1469
+    },
+    {
+      "anio": 2024,
+      "departamento": "07",
+      "nombre": "Callao",
+      "tasa_personas": 33.8599,
+      "hogares_muestra": 1027
+    },
+    {
+      "anio": 2024,
+      "departamento": "08",
+      "nombre": "Cusco",
+      "tasa_personas": 18.5413,
+      "hogares_muestra": 1230
+    },
+    {
+      "anio": 2024,
+      "departamento": "09",
+      "nombre": "Huancavelica",
+      "tasa_personas": 33.4034,
+      "hogares_muestra": 1042
+    },
+    {
+      "anio": 2024,
+      "departamento": "10",
+      "nombre": "Huánuco",
+      "tasa_personas": 38.9626,
+      "hogares_muestra": 1244
+    },
+    {
+      "anio": 2024,
+      "departamento": "11",
+      "nombre": "Ica",
+      "tasa_personas": 6.0142,
+      "hogares_muestra": 1500
+    },
+    {
+      "anio": 2024,
+      "departamento": "12",
+      "nombre": "Junín",
+      "tasa_personas": 18.4994,
+      "hogares_muestra": 1506
+    },
+    {
+      "anio": 2024,
+      "departamento": "13",
+      "nombre": "La Libertad",
+      "tasa_personas": 30.1903,
+      "hogares_muestra": 1509
+    },
+    {
+      "anio": 2024,
+      "departamento": "14",
+      "nombre": "Lambayeque",
+      "tasa_personas": 14.0406,
+      "hogares_muestra": 1302
+    },
+    {
+      "anio": 2024,
+      "departamento": "15",
+      "nombre": "Lima",
+      "tasa_personas": 27.0689,
+      "hogares_muestra": 4544
+    },
+    {
+      "anio": 2024,
+      "departamento": "16",
+      "nombre": "Loreto",
+      "tasa_personas": 42.9726,
+      "hogares_muestra": 1359
+    },
+    {
+      "anio": 2024,
+      "departamento": "17",
+      "nombre": "Madre de Dios",
+      "tasa_personas": 11.1478,
+      "hogares_muestra": 603
+    },
+    {
+      "anio": 2024,
+      "departamento": "18",
+      "nombre": "Moquegua",
+      "tasa_personas": 10.9682,
+      "hogares_muestra": 963
+    },
+    {
+      "anio": 2024,
+      "departamento": "19",
+      "nombre": "Pasco",
+      "tasa_personas": 38.972,
+      "hogares_muestra": 865
+    },
+    {
+      "anio": 2024,
+      "departamento": "20",
+      "nombre": "Piura",
+      "tasa_personas": 31.861,
+      "hogares_muestra": 1611
+    },
+    {
+      "anio": 2024,
+      "departamento": "21",
+      "nombre": "Puno",
+      "tasa_personas": 39.9381,
+      "hogares_muestra": 1123
+    },
+    {
+      "anio": 2024,
+      "departamento": "22",
+      "nombre": "San Martín",
+      "tasa_personas": 22.0215,
+      "hogares_muestra": 1347
+    },
+    {
+      "anio": 2024,
+      "departamento": "23",
+      "nombre": "Tacna",
+      "tasa_personas": 23.989,
+      "hogares_muestra": 1271
+    },
+    {
+      "anio": 2024,
+      "departamento": "24",
+      "nombre": "Tumbes",
+      "tasa_personas": 26.9012,
+      "hogares_muestra": 842
+    },
+    {
+      "anio": 2024,
+      "departamento": "25",
+      "nombre": "Ucayali",
+      "tasa_personas": 27.0701,
+      "hogares_muestra": 1119
+    }
+  ],
+  "sesgo_prueba": [
+    {
+      "codigo": "06",
+      "departamento": "Cajamarca",
+      "hogares": 1469,
+      "tasa_observada": 45.0069,
+      "tasa_predicha": 45.3543,
+      "tasa_clasificados": 67.9003,
+      "sesgo_pp": 0.3474
+    },
+    {
+      "codigo": "16",
+      "departamento": "Loreto",
+      "hogares": 1359,
+      "tasa_observada": 42.9726,
+      "tasa_predicha": 38.3189,
+      "tasa_clasificados": 55.3084,
+      "sesgo_pp": -4.6537
+    },
+    {
+      "codigo": "21",
+      "departamento": "Puno",
+      "hogares": 1123,
+      "tasa_observada": 39.9381,
+      "tasa_predicha": 47.0612,
+      "tasa_clasificados": 74.6605,
+      "sesgo_pp": 7.1232
+    },
+    {
+      "codigo": "19",
+      "departamento": "Pasco",
+      "hogares": 865,
+      "tasa_observada": 38.972,
+      "tasa_predicha": 39.3896,
+      "tasa_clasificados": 56.5761,
+      "sesgo_pp": 0.4176
+    },
+    {
+      "codigo": "10",
+      "departamento": "Huánuco",
+      "hogares": 1244,
+      "tasa_observada": 38.9626,
+      "tasa_predicha": 41.3341,
+      "tasa_clasificados": 63.3043,
+      "sesgo_pp": 2.3715
+    },
+    {
+      "codigo": "07",
+      "departamento": "Callao",
+      "hogares": 1027,
+      "tasa_observada": 33.8599,
+      "tasa_predicha": 27.5354,
+      "tasa_clasificados": 39.1452,
+      "sesgo_pp": -6.3245
+    },
+    {
+      "codigo": "09",
+      "departamento": "Huancavelica",
+      "hogares": 1042,
+      "tasa_observada": 33.4034,
+      "tasa_predicha": 40.7318,
+      "tasa_clasificados": 65.1712,
+      "sesgo_pp": 7.3285
+    },
+    {
+      "codigo": "05",
+      "departamento": "Ayacucho",
+      "hogares": 1160,
+      "tasa_observada": 32.7633,
+      "tasa_predicha": 40.5678,
+      "tasa_clasificados": 61.3105,
+      "sesgo_pp": 7.8045
+    },
+    {
+      "codigo": "20",
+      "departamento": "Piura",
+      "hogares": 1611,
+      "tasa_observada": 31.861,
+      "tasa_predicha": 32.4872,
+      "tasa_clasificados": 46.7284,
+      "sesgo_pp": 0.6262
+    },
+    {
+      "codigo": "13",
+      "departamento": "La Libertad",
+      "hogares": 1509,
+      "tasa_observada": 30.1903,
+      "tasa_predicha": 28.8117,
+      "tasa_clasificados": 41.394,
+      "sesgo_pp": -1.3786
+    },
+    {
+      "codigo": "25",
+      "departamento": "Ucayali",
+      "hogares": 1119,
+      "tasa_observada": 27.0701,
+      "tasa_predicha": 21.4579,
+      "tasa_clasificados": 28.0752,
+      "sesgo_pp": -5.6121
+    },
+    {
+      "codigo": "15",
+      "departamento": "Lima",
+      "hogares": 4544,
+      "tasa_observada": 27.0689,
+      "tasa_predicha": 23.8919,
+      "tasa_clasificados": 33.311,
+      "sesgo_pp": -3.1771
+    },
+    {
+      "codigo": "24",
+      "departamento": "Tumbes",
+      "hogares": 842,
+      "tasa_observada": 26.9012,
+      "tasa_predicha": 25.991,
+      "tasa_clasificados": 39.0018,
+      "sesgo_pp": -0.9101
+    },
+    {
+      "codigo": "01",
+      "departamento": "Amazonas",
+      "hogares": 1243,
+      "tasa_observada": 25.7488,
+      "tasa_predicha": 33.5011,
+      "tasa_clasificados": 49.7609,
+      "sesgo_pp": 7.7523
+    },
+    {
+      "codigo": "23",
+      "departamento": "Tacna",
+      "hogares": 1271,
+      "tasa_observada": 23.989,
+      "tasa_predicha": 26.2281,
+      "tasa_clasificados": 39.3333,
+      "sesgo_pp": 2.239
+    },
+    {
+      "codigo": "03",
+      "departamento": "Apurímac",
+      "hogares": 913,
+      "tasa_observada": 23.9587,
+      "tasa_predicha": 32.2466,
+      "tasa_clasificados": 48.1264,
+      "sesgo_pp": 8.2879
+    },
+    {
+      "codigo": "02",
+      "departamento": "Áncash",
+      "hogares": 1393,
+      "tasa_observada": 22.7746,
+      "tasa_predicha": 26.7441,
+      "tasa_clasificados": 38.34,
+      "sesgo_pp": 3.9696
+    },
+    {
+      "codigo": "22",
+      "departamento": "San Martín",
+      "hogares": 1347,
+      "tasa_observada": 22.0215,
+      "tasa_predicha": 27.6914,
+      "tasa_clasificados": 41.0921,
+      "sesgo_pp": 5.6699
+    },
+    {
+      "codigo": "08",
+      "departamento": "Cusco",
+      "hogares": 1230,
+      "tasa_observada": 18.5413,
+      "tasa_predicha": 24.4542,
+      "tasa_clasificados": 33.3984,
+      "sesgo_pp": 5.9128
+    },
+    {
+      "codigo": "12",
+      "departamento": "Junín",
+      "hogares": 1506,
+      "tasa_observada": 18.4994,
+      "tasa_predicha": 25.1023,
+      "tasa_clasificados": 34.3081,
+      "sesgo_pp": 6.6029
+    },
+    {
+      "codigo": "04",
+      "departamento": "Arequipa",
+      "hogares": 1506,
+      "tasa_observada": 15.7844,
+      "tasa_predicha": 16.2792,
+      "tasa_clasificados": 20.7494,
+      "sesgo_pp": 0.4948
+    },
+    {
+      "codigo": "14",
+      "departamento": "Lambayeque",
+      "hogares": 1302,
+      "tasa_observada": 14.0406,
+      "tasa_predicha": 16.6207,
+      "tasa_clasificados": 20.3508,
+      "sesgo_pp": 2.5801
+    },
+    {
+      "codigo": "17",
+      "departamento": "Madre de Dios",
+      "hogares": 603,
+      "tasa_observada": 11.1478,
+      "tasa_predicha": 13.4159,
+      "tasa_clasificados": 10.3405,
+      "sesgo_pp": 2.2681
+    },
+    {
+      "codigo": "18",
+      "departamento": "Moquegua",
+      "hogares": 963,
+      "tasa_observada": 10.9682,
+      "tasa_predicha": 12.8955,
+      "tasa_clasificados": 15.7019,
+      "sesgo_pp": 1.9273
+    },
+    {
+      "codigo": "11",
+      "departamento": "Ica",
+      "hogares": 1500,
+      "tasa_observada": 6.0142,
+      "tasa_predicha": 7.6612,
+      "tasa_clasificados": 6.5074,
+      "sesgo_pp": 1.647
+    }
+  ]
+}

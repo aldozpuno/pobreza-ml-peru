@@ -1,0 +1,43 @@
+:host { display: block; min-width: 0; position: relative; }
+.khipu { position: relative; }
+svg { display: block; overflow: visible; }
+
+.regla { stroke: var(--linea-suave); stroke-width: 1; }
+.regla-texto { fill: var(--tinta-3); font-size: 12px; }
+.principal { stroke: var(--tinta); stroke-width: 7; stroke-linecap: round; }
+.torsion { stroke: var(--papel); stroke-width: 1.3; opacity: 0.55; }
+
+.anio { fill: var(--tinta); font-size: 13px; font-weight: 600; }
+.nota { fill: var(--cochinilla); font-size: 11px; }
+.lazo { fill: none; stroke: var(--indigo); stroke-width: 2.5; }
+.colgante { fill: none; stroke: var(--indigo); stroke-width: 3.5; stroke-linecap: round; }
+.secundario { fill: none; stroke: var(--cochinilla); stroke-width: 1.6; stroke-linecap: round; }
+.nudo { fill: var(--indigo); stroke: var(--tinta); stroke-width: 1.2; }
+.nudo-largo { fill: var(--indigo); stroke: var(--papel); stroke-width: 2; }
+.nudo-secundario { fill: var(--cochinilla); stroke: var(--papel); stroke-width: 1.5; }
+.anillo { fill: none; stroke: var(--tinta); stroke-width: 1.2; }
+.valor { fill: var(--tinta); font-size: 14px; font-weight: 650; }
+.zona { fill: transparent; cursor: default; outline: none; }
+.cordon { transition: opacity 160ms ease; }
+.cordon.tenue { opacity: 0.35; }
+
+/* El único momento animado de la web: los cordones se descuelgan al cargar. */
+.colgante:not(.quieto), .secundario:not(.quieto) {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: descolgar 900ms cubic-bezier(.3,.7,.3,1) forwards;
+  animation-delay: calc(var(--i) * 70ms);
+}
+.nudo, .nudo-largo, .nudo-secundario, .anillo, .valor {
+  animation: aparecer 300ms ease forwards; animation-delay: calc(var(--i) * 70ms + 700ms); opacity: 0;
+}
+.claves .nudo, .claves .anillo { animation: none; opacity: 1; }
+@keyframes descolgar { to { stroke-dashoffset: 0; } }
+@keyframes aparecer { to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .colgante, .secundario { stroke-dasharray: none; stroke-dashoffset: 0; }
+  .nudo, .nudo-largo, .nudo-secundario, .anillo, .valor { opacity: 1; }
+}
+
+.claves { list-style: none; margin: 1rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; font-size: var(--t-0); color: var(--tinta-2); }
+.claves li { display: flex; align-items: center; gap: 0.4rem; }
+.claves svg { overflow: visible; }

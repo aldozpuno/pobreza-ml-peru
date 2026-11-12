@@ -1,0 +1,12 @@
+/* Tablas de datos: números alineados a la derecha con cifras tabulares. */
+.tabla-envoltura { overflow-x: auto; }
+table.datos { width: 100%; border-collapse: collapse; font-size: var(--t-1); }
+table.datos caption { text-align: left; color: var(--tinta-3); font-size: var(--t-0); padding-bottom: 0.5rem; }
+table.datos th {
+  text-align: left; font-weight: 600; color: var(--tinta-2);
+  border-bottom: 2px solid var(--tinta); padding: 0.45rem 0.75rem 0.45rem 0;
+  font-variation-settings: "wdth" 90; vertical-align: bottom;
+}
+table.datos td { padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--linea-suave); vertical-align: top; }
+table.datos .num { text-align: right; white-space: nowrap; }
+table.datos tr.destacada td { font-weight: 650; }

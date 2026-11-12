@@ -1,0 +1,81 @@
+<div class="pagina">
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Del microdato al resultado</h2>
+      <p>Todo el proceso es reproducible: cada etapa es un comando que lee la salida de la anterior.</p>
+    </div>
+    <ol class="etapas">
+      @for (e of etapas; track e.comando) {
+        <li>
+          <h3>{{ e.nombre }}</h3>
+          <p>{{ e.texto }}</p>
+          <code>pobreza {{ e.comando }}</code>
+        </li>
+      }
+    </ol>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Validación temporal</h2>
+      <p>
+        El modelo nunca se evalúa con un año que haya usado antes. Cada pliegue entrena con los años anteriores,
+        calibra las probabilidades y elige el umbral con el siguiente, y se evalúa con el que sigue. La prueba final
+        repite el esquema con {{ anios().at(-1) }}, que no se usa para ninguna decisión.
+      </p>
+    </div>
+    <app-figura titulo="Esquema de la validación con ventana expansiva">
+      <app-pliegues [pliegues]="metodo().pliegues" [anios]="anios()" />
+    </app-figura>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Hogares entrevistados en más de un año</h2>
+      <p>
+        Un hogar se marca como repetido si responde que fue entrevistado el año anterior (pregunta PANEL del módulo 100)
+        o si su llave CONGLOME–VIVIENDA–HOGAR ya apareció en un año anterior. Así se puede evaluar el modelo
+        también solo con hogares nuevos.
+      </p>
+    </div>
+    <app-figura titulo="Hogares repetidos en la base apilada">
+      <app-tabla [columnas]="columnasPanel" [filas]="metodo().panel" />
+    </app-figura>
+    <aside class="margen">
+      <p>En 2017 no hay año anterior en la base, por eso solo cuenta la pregunta PANEL.</p>
+    </aside>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Variables que el modelo no puede ver</h2>
+      <p>Se excluyen las variables que definen la pobreza o se calculan con el gasto o el ingreso: con ellas el modelo acertaría sin aprender nada útil.</p>
+    </div>
+    <app-figura titulo="Variables excluidas por fuga de datos">
+      <app-tabla [columnas]="columnasFuga" [filas]="metodo().fuga" />
+    </app-figura>
+  </section>
+
+  <section class="bloque bloque--ancho">
+    <div class="bloque__entrada">
+      <h2>Catálogo de variables</h2>
+      <p>Las {{ metodo().variables.length }} variables predictoras, con su módulo de origen, su definición y la teoría que las justifica.</p>
+    </div>
+    <app-figura titulo="Variables predictoras del modelo" fuente="Definiciones según los cuestionarios de la ENAHO. Elaboración propia.">
+      <div class="filtros">
+        <label>Buscar <input type="search" [value]="busqueda()" (input)="busqueda.set(leer($event))" placeholder="Por ejemplo, agua o educación" /></label>
+        <label>Grupo
+          <select (change)="grupo.set(leer($event))">
+            <option value="todos">Todos</option>
+            @for (g of grupos(); track g) { <option [value]="g">{{ g }}</option> }
+          </select>
+        </label>
+      </div>
+      @if (variables().length) {
+        <app-tabla [columnas]="columnasVariables" [filas]="variables()" />
+      } @else {
+        <p class="vacio">Ninguna variable coincide con «{{ busqueda() }}». Pruebe con otra palabra o elija «Todos».</p>
+      }
+    </app-figura>
+  </section>
+</div>

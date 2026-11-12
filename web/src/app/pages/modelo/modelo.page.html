@@ -1,0 +1,111 @@
+<div class="pagina">
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Cinco modelos con los mismos datos</h2>
+      <p>
+        Todos se entrenan y evalúan con los mismos pliegues temporales. {{ NOMBRES[mejor().estimador] }} obtiene el mayor
+        AUC-ROC ({{ decimal(mejor().auc_roc, 3) }}), seguido de {{ NOMBRES[segundo().estimador] }}
+        ({{ decimal(segundo().auc_roc, 3) }}). La ventaja es pequeña: los modelos probit y logit quedan cerca y sirven
+        como referencia econométrica interpretable.
+      </p>
+    </div>
+    <app-figura titulo="Comparación de modelos" descripcion="Promedio de los pliegues de validación (evaluación de 2020 a 2023)"
+      fuente="AUC: área bajo la curva. Brier: error cuadrático de la probabilidad (menor es mejor). Fuente: INEI, ENAHO. Elaboración propia.">
+      <app-tabla [columnas]="columnasComparacion" [filas]="comparacion()" [destacar]="esPrincipal" />
+    </app-figura>
+    <aside class="margen">
+      <p><strong>AUC-ROC:</strong> qué tan bien ordena el modelo a pobres y no pobres (0,5 es azar, 1 es perfecto).</p>
+      <p><strong>AUC-PR:</strong> resume precisión y exhaustividad; es más exigente cuando los pobres son minoría.</p>
+    </aside>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>El desempeño se mantiene de un año a otro</h2>
+      <p>Cada punto es un año que el modelo no había visto, incluido 2020, el año de la pandemia.</p>
+    </div>
+    <app-figura [titulo]="'Desempeño de ' + NOMBRES[principal()] + ' por año de evaluación'">
+      <app-lineas [series]="porAnio()" [alto]="260" [dominioY]="[0.4, 1]" [formatoX]="anio" [formatoY]="dosDecimales"
+                  [ticksX]="aniosEvaluacion()" descripcion="AUC-ROC y AUC-PR por año de evaluación" />
+    </app-figura>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Prueba en {{ meta().anio_prueba }}</h2>
+      <p>
+        {{ meta().pliegue_final }}: el año de prueba se usa una sola vez.
+        El resultado casi no cambia al ponderar por el factor de expansión ni al dejar fuera a los hogares repetidos.
+      </p>
+    </div>
+    <app-figura titulo="Desempeño en el año de prueba según los hogares evaluados">
+      <app-tabla [columnas]="columnasPrueba" [filas]="modelo().prueba" />
+    </app-figura>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Aciertos y errores</h2>
+      <p>
+        Con el umbral de {{ decimal(meta().umbral, 2) }}, el modelo identifica al {{ proporcion(prueba().recall) }} de los
+        hogares pobres. El error que más pesa en una política social es la exclusión: hogares pobres que el modelo deja fuera.
+      </p>
+    </div>
+    <app-figura [titulo]="'Matriz de confusión, ' + meta().anio_prueba"
+      fuente="Personas: hogares expandidos con FACTOR07 × MIEPERHO. Fuente: INEI, ENAHO. Elaboración propia.">
+      <app-matriz [celdas]="modelo().confusion" />
+    </app-figura>
+    <aside class="margen">
+      <p><strong>Exclusión:</strong> pobre clasificado como no pobre; quedaría sin el programa.</p>
+      <p><strong>Filtración:</strong> no pobre clasificado como pobre; recibiría un beneficio que no le corresponde.</p>
+      <p>Subir el umbral reduce la filtración y aumenta la exclusión; bajarlo hace lo contrario.</p>
+    </aside>
+  </section>
+
+  <section class="bloque bloque--ancho">
+    <div class="dos-columnas">
+      <app-figura titulo="Curva ROC" [descripcion]="'Prueba ' + meta().anio_prueba + '. La diagonal es un clasificador al azar.'">
+        <app-lineas [series]="roc()" [alto]="300" [dominioX]="[0, 1]" [dominioY]="[0, 1]" [diagonal]="true"
+                    [formatoX]="unDecimal" [formatoY]="unDecimal" tituloX="Falsos positivos" tituloY="Verdaderos positivos"
+                    descripcion="Curva ROC del modelo en el año de prueba" />
+      </app-figura>
+      <app-figura titulo="Curva de precisión y exhaustividad" [descripcion]="'Prueba ' + meta().anio_prueba">
+        <app-lineas [series]="pr()" [alto]="300" [dominioX]="[0, 1]" [dominioY]="[0, 1]"
+                    [formatoX]="unDecimal" [formatoY]="unDecimal" tituloX="Exhaustividad" tituloY="Precisión"
+                    descripcion="Curva de precisión y exhaustividad en el año de prueba" />
+      </app-figura>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Las probabilidades se pueden leer como tales</h2>
+      <p>
+        Se agrupan los hogares en diez grupos según su probabilidad. Si el modelo dice 0,5, alrededor de la mitad de
+        esos hogares es pobre: los puntos quedan cerca de la diagonal. Por eso el promedio de probabilidades sirve para
+        estimar la pobreza de un territorio.
+      </p>
+    </div>
+    <app-figura titulo="Calibración de las probabilidades" [descripcion]="'Prueba ' + meta().anio_prueba + ', diez grupos de igual tamaño'">
+      <app-lineas [series]="calibracion()" [alto]="300" [dominioX]="[0, 1]" [dominioY]="[0, 1]" [diagonal]="true"
+                  [formatoX]="unDecimal" [formatoY]="unDecimal" tituloX="Probabilidad media del grupo" tituloY="Proporción de pobres"
+                  descripcion="Probabilidad predicha frente a proporción observada de pobres" />
+    </app-figura>
+  </section>
+
+  @if (sinAlquiler(); as s) {
+    <section class="bloque">
+      <div class="bloque__entrada">
+        <h2>Sin el alquiler estimado</h2>
+        <p>
+          El alquiler estimado de la vivienda (P106) es la variable más importante, pero puede estar ligado al gasto con
+          que se mide la pobreza. Sin ella el AUC-ROC baja de {{ decimal(prueba().auc_roc, 3) }} a {{ decimal(s.auc_roc, 3) }}:
+          el modelo pierde algo de precisión, pero no depende de esa variable.
+        </p>
+      </div>
+      <app-figura titulo="Sensibilidad al excluir el alquiler estimado" [descripcion]="'Prueba ' + meta().anio_prueba">
+        <app-tabla [columnas]="columnasSensibilidad" [filas]="modelo().sensibilidad" />
+      </app-figura>
+    </section>
+  }
+</div>

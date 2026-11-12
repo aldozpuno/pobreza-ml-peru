@@ -1,0 +1,18 @@
+.portada { padding: 4.5rem 0 1rem; max-width: 62rem; }
+h1 {
+  font-size: var(--t-5); font-weight: 760; line-height: 1.02; letter-spacing: -0.02em;
+  font-variation-settings: "wdth" 78; text-wrap: balance;
+}
+.entrada { font-size: 1.2rem; line-height: 1.55; color: var(--tinta-2); margin-top: 1.6rem; max-width: 60ch; }
+
+.lecturas { list-style: none; margin: 0; padding: 0; display: grid; gap: 2rem; }
+.lectura__frase { font-size: 1.15rem; margin-bottom: 0.6rem; }
+.lectura__frase b { font-size: 2.6rem; font-weight: 760; font-variation-settings: "wdth" 80; line-height: 1; margin-right: 0.35rem; vertical-align: -0.12em; }
+.lectura__nota { color: var(--tinta-3); font-size: var(--t-1); margin-top: 0.5rem; }
+.estimacion { margin-top: 2.2rem; font-size: 1.1rem; }
+
+@media (max-width: 720px) {
+  .portada { padding-top: 2.5rem; }
+  .entrada { font-size: 1.05rem; }
+  .lectura__frase b { font-size: 2.1rem; }
+}

@@ -1,0 +1,56 @@
+<div class="pagina">
+  <section class="bloque bloque--ancho">
+    <div class="bloque__entrada">
+      <h2>La pobreza por departamento</h2>
+      <p>Proporción de personas pobres en cada departamento. Los departamentos con menos hogares en la muestra tienen tasas anuales menos precisas.</p>
+    </div>
+    <app-figura [titulo]="'Personas en pobreza monetaria, ' + anio()" [conTabla]="false"
+      fuente="Fuente: INEI, ENAHO. Ponderado por FACTOR07 × MIEPERHO. Puno se resalta por ser la región de la universidad. Elaboración propia.">
+      <div class="control">
+        <label for="anio">Año</label>
+        <input id="anio" type="range" [min]="anios()[0]" [max]="anios().at(-1)" step="1" [value]="anio()" (input)="cambiarAnio($event)" />
+        <output for="anio">{{ anio() }}</output>
+      </div>
+      <div class="mapa-y-lista">
+        <div>
+          <app-mapa [valores]="valores()" [dominio]="dominio()" [formato]="formatoPct" [detalle]="muestra()"
+                    [descripcion]="'Mapa de pobreza por departamento en ' + anio()" />
+          <app-escala titulo="% de personas pobres" [minimo]="dominio()[0] + ' %'" [maximo]="dominio()[1] + ' %'" />
+        </div>
+        <app-barras [filas]="ranking()" [formato]="formatoPct" [maximo]="dominio()[1]"
+                    [descripcion]="'Departamentos ordenados por pobreza en ' + anio()" />
+      </div>
+    </app-figura>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Dónde se equivoca el modelo</h2>
+      <p>
+        Para estimar la pobreza de un departamento se promedian las probabilidades del modelo de sus hogares. En
+        {{ anioPrueba() }}, la estimación se aleja de la observada {{ decimal(resumen()['error_absoluto_medio_pp']) }}
+        puntos en promedio. El mayor error está en {{ mayorError().departamento }}
+        ({{ formatoPp(mayorError().sesgo_pp) }}).
+      </p>
+    </div>
+    <app-figura titulo="Pobreza observada y estimada por departamento" [conTabla]="true"
+      [descripcion]="'ENAHO ' + anioPrueba() + ', ordenado de mayor a menor pobreza observada'"
+      fuente="Estimada: promedio de las probabilidades calibradas del modelo, ponderado por FACTOR07 × MIEPERHO. Fuente: INEI, ENAHO. Elaboración propia.">
+      <div grafico class="sesgo">
+        <app-pesas [filas]="pesas()" nombreA="Observada" nombreB="Estimada por el modelo" [formato]="formatoEje"
+                   [diferencia]="formatoPp" [dominio]="[0, 50]" descripcion="Pobreza observada y estimada por departamento" />
+        <div class="sesgo__mapa">
+          <app-mapa [valores]="valoresSesgo()" [dominio]="dominioSesgo()" modo="divergente" [formato]="formatoPp"
+                    [detalle]="detalleSesgo()" descripcion="Diferencia entre pobreza estimada y observada por departamento" />
+          <app-escala titulo="Estimada menos observada" [minimo]="dominioSesgo()[0] + ' pp'" [maximo]="'+' + dominioSesgo()[1] + ' pp'" modo="divergente" />
+        </div>
+      </div>
+      <app-tabla tabla [columnas]="columnasSesgo" [filas]="sesgo()" />
+    </app-figura>
+    <aside class="margen">
+      <p><strong>Error medio:</strong> {{ decimal(resumen()['error_absoluto_medio_pp']) }} pp; <strong>máximo:</strong> {{ decimal(resumen()['error_absoluto_maximo_pp']) }} pp.</p>
+      <p><strong>Correlación</strong> entre lo observado y lo estimado: {{ decimal(resumen()['correlacion_observada_predicha'], 3) }}.</p>
+      <p>Contar los hogares que superan el umbral sobreestima la pobreza, porque el umbral prioriza no dejar fuera a los pobres. La tabla muestra esa cifra en la última columna.</p>
+    </aside>
+  </section>
+</div>

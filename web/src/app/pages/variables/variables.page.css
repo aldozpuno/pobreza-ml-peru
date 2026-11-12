@@ -1,0 +1,8 @@
+.claves { list-style: none; display: flex; flex-wrap: wrap; gap: 0.3rem 1.3rem; padding: 0; margin: 0 0 1.2rem; font-size: var(--t-0); color: var(--tinta-2); }
+.claves i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 0.4rem; vertical-align: -1px; }
+.cochinilla { background: var(--cochinilla); } .indigo { background: var(--indigo); } .neutro { background: var(--neutro); }
+.mas {
+  margin-top: 1.2rem; background: none; border: 1px solid var(--linea); border-radius: var(--radio);
+  padding: 0.4rem 0.9rem; font-size: var(--t-0); color: var(--tinta-2); cursor: pointer;
+}
+.mas:hover { border-color: var(--tinta-3); color: var(--tinta); }

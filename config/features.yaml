@@ -1,0 +1,130 @@
+# Catálogo de variables predictoras.
+# Cada entrada documenta de dónde sale la variable, cómo se construye y qué teoría la justifica.
+# `signo` = efecto esperado sobre la probabilidad de ser pobre (+, -, ±).
+# `activa: false` la deja fuera del modelo sin borrar su documentación.
+
+teorias:
+  proxy: "Focalización por proxy (Grosh y Baker, 1995; Brown et al., 2018)"
+  capacidades: "Capacidades (Sen, 1995)"
+  multidimensional: "Enfoque multidimensional (Alkire y Foster, 2011)"
+  circulo: "Círculo de la pobreza (Myrdal, 1957)"
+  estructural: "Estructuralismo (Sosa Escudero, 2023)"
+  demografia: "Tamaño y composición del hogar (Lanjouw y Ravallion, 1995)"
+  proteccion: "Protección social focalizada"
+  choques: "Dinámica y choques (Cantó et al., 2012)"
+
+variables:
+  # ── Territorio y diseño muestral ───────────────────────────────────────────
+  - {nombre: dominio, etiqueta: "Dominio geográfico", modulo: sumaria, grupo: territorio, teoria: estructural, signo: "±", activa: true,
+     definicion: "Dominio geográfico (1 Costa Norte … 8 Lima Metropolitana)"}
+  - {nombre: estrato, etiqueta: "Estrato del centro poblado", modulo: sumaria, grupo: territorio, teoria: estructural, signo: "+", activa: true,
+     definicion: "Estrato por tamaño del centro poblado (1 = 500 000 a más … 8 = AER simple)"}
+  - {nombre: rural, etiqueta: "Área rural", modulo: sumaria, grupo: territorio, teoria: estructural, signo: "+", activa: true,
+     definicion: "1 si el estrato es 6, 7 u 8 (centros poblados de menos de 2 000 habitantes)"}
+  - {nombre: departamento, etiqueta: "Departamento", modulo: sumaria, grupo: territorio, teoria: estructural, signo: "±", activa: true,
+     definicion: "Primeros dos dígitos del UBIGEO"}
+  - {nombre: covid, etiqueta: "Año de la COVID-19 (2020)", modulo: sumaria, grupo: territorio, teoria: choques, signo: "+", activa: true,
+     definicion: "1 si el año es 2020"}
+
+  # ── Demografía del hogar ───────────────────────────────────────────────────
+  - {nombre: mieperho, etiqueta: "Miembros del hogar", modulo: sumaria, grupo: demografia, teoria: demografia, signo: "+", activa: true,
+     definicion: "Total de miembros del hogar (excluye trabajadores del hogar y pensionistas)"}
+  - {nombre: n_menores, etiqueta: "Menores de 18 años", modulo: miembros, grupo: demografia, teoria: demografia, signo: "+", activa: true,
+     definicion: "Residentes habituales menores de 18 años"}
+  - {nombre: n_mayores, etiqueta: "Mayores de 65 años", modulo: miembros, grupo: demografia, teoria: demografia, signo: "±", activa: true,
+     definicion: "Residentes habituales de 65 años o más"}
+  - {nombre: ratio_dependencia, etiqueta: "Razón de dependencia", modulo: miembros, grupo: demografia, teoria: demografia, signo: "+", activa: true,
+     definicion: "(menores de 15 + mayores de 64) / residentes de 15 a 64 años"}
+  - {nombre: jefe_mujer, etiqueta: "Jefatura femenina", modulo: miembros, grupo: demografia, teoria: demografia, signo: "±", activa: true,
+     definicion: "1 si la jefatura del hogar es femenina (P203 = 1 y P207 = 2)"}
+  - {nombre: edad_jefe, etiqueta: "Edad del jefe del hogar", modulo: miembros, grupo: demografia, teoria: demografia, signo: "±", activa: true,
+     definicion: "Edad del jefe o jefa del hogar en años (P208A)"}
+
+  # ── Capital humano ─────────────────────────────────────────────────────────
+  - {nombre: educ_prom, etiqueta: "Años de estudio promedio", modulo: educacion, grupo: capital_humano, teoria: capacidades, signo: "-", activa: true,
+     definicion: "Promedio de años de estudio de los miembros de 15 años o más (desde P301A)"}
+  - {nombre: educ_max, etiqueta: "Años de estudio máximos", modulo: educacion, grupo: capital_humano, teoria: capacidades, signo: "-", activa: true,
+     definicion: "Máximo de años de estudio en el hogar"}
+  # Inactiva: es combinación lineal exacta de educ_max y educ_prom (VIF infinito).
+  - {nombre: brecha_educ, etiqueta: "Brecha educativa", modulo: educacion, grupo: capital_humano, teoria: capacidades, signo: "±", activa: false,
+     definicion: "educ_max − educ_prom"}
+  - {nombre: tasa_analfabetismo, etiqueta: "Analfabetismo", modulo: educacion, grupo: capital_humano, teoria: capacidades, signo: "+", activa: true,
+     definicion: "Proporción de miembros de 15 años o más que no saben leer ni escribir (P302 = 2)"}
+  - {nombre: asistencia_menores, etiqueta: "Asistencia escolar", modulo: educacion, grupo: capital_humano, teoria: capacidades, signo: "-", activa: true,
+     definicion: "Proporción de miembros de 6 a 17 años matriculados este año (P306 = 1)"}
+
+  # ── Salud ──────────────────────────────────────────────────────────────────
+  - {nombre: tiene_seguro, etiqueta: "Algún seguro de salud", modulo: salud, grupo: salud, teoria: capacidades, signo: "±", activa: true,
+     definicion: "1 si algún miembro tiene cualquier seguro de salud (P4191–P4198 = 1)"}
+  - {nombre: solo_sis, etiqueta: "Solo SIS", modulo: salud, grupo: salud, teoria: proteccion, signo: "+", activa: true,
+     definicion: "Proporción de miembros cuyo único seguro es el SIS (P4195 = 1)"}
+  - {nombre: n_cronicos, etiqueta: "Enfermos crónicos", modulo: salud, grupo: salud, teoria: capacidades, signo: "+", activa: true,
+     definicion: "Miembros con enfermedad o malestar crónico (P401 = 1)"}
+
+  # ── Trabajo ────────────────────────────────────────────────────────────────
+  - {nombre: tasa_ocupacion, etiqueta: "Tasa de ocupación", modulo: empleo, grupo: trabajo, teoria: circulo, signo: "-", activa: true,
+     definicion: "Ocupados (OCU500 = 1) / miembros de 14 años o más"}
+  - {nombre: n_informales, etiqueta: "Ocupados informales", modulo: empleo, grupo: trabajo, teoria: circulo, signo: "+", activa: true,
+     definicion: "Ocupados con empleo informal (criterio OIT reconstruido: negocio sin RUC o asalariado sin pensión; la ENAHO 2024 no publica OCUPINF)"}
+  - {nombre: tasa_informalidad, etiqueta: "Tasa de informalidad", modulo: empleo, grupo: trabajo, teoria: circulo, signo: "+", activa: true,
+     definicion: "Informales / ocupados (0 si no hay ocupados)"}
+  - {nombre: jefe_independiente, etiqueta: "Jefe independiente", modulo: empleo, grupo: trabajo, teoria: circulo, signo: "+", activa: true,
+     definicion: "1 si el jefe es trabajador independiente o familiar no remunerado (P507 = 2 o 5)"}
+
+  # ── Vivienda y servicios ───────────────────────────────────────────────────
+  - {nombre: tipo_vivienda, etiqueta: "Tipo de vivienda", modulo: vivienda, grupo: vivienda, teoria: proxy, signo: "±", activa: true,
+     definicion: "P101: tipo de vivienda (1 casa independiente … 8 otro)"}
+  - {nombre: pared_precaria, etiqueta: "Pared precaria", modulo: vivienda, grupo: vivienda, teoria: multidimensional, signo: "+", activa: true,
+     definicion: "1 si P102 es quincha, piedra con barro, madera, triplay/estera u otro (5–9)"}
+  - {nombre: piso_tierra, etiqueta: "Piso de tierra", modulo: vivienda, grupo: vivienda, teoria: multidimensional, signo: "+", activa: true,
+     definicion: "1 si P103 = 6 (tierra)"}
+  - {nombre: habitaciones, etiqueta: "Habitaciones", modulo: vivienda, grupo: vivienda, teoria: proxy, signo: "-", activa: true,
+     definicion: "P104: habitaciones sin contar baño, cocina ni pasadizos"}
+  - {nombre: hacinamiento, etiqueta: "Hacinamiento", modulo: vivienda, grupo: vivienda, teoria: multidimensional, signo: "+", activa: true,
+     definicion: "MIEPERHO / P104 (recortado en 10)"}
+  - {nombre: alquiler_imputado, etiqueta: "Alquiler estimado (P106)", modulo: vivienda, grupo: vivienda, teoria: proxy, signo: "-", activa: true,
+     definicion: "P106: alquiler mensual estimado (S/). Se prueba también sin ella (posible vínculo con el gasto)"}
+  - {nombre: agua_red, etiqueta: "Agua de red pública", modulo: vivienda, grupo: servicios, teoria: multidimensional, signo: "-", activa: true,
+     definicion: "1 si P110 = 1 o 2 (red pública)"}
+  - {nombre: desague_red, etiqueta: "Desagüe de red pública", modulo: vivienda, grupo: servicios, teoria: multidimensional, signo: "-", activa: true,
+     definicion: "1 si P111A = 1 o 2 (red pública de desagüe)"}
+  - {nombre: electricidad, etiqueta: "Electricidad", modulo: vivienda, grupo: servicios, teoria: multidimensional, signo: "-", activa: true,
+     definicion: "1 si P1121 = 1"}
+  - {nombre: combustible_solido, etiqueta: "Cocina con leña o carbón", modulo: vivienda, grupo: servicios, teoria: multidimensional, signo: "+", activa: true,
+     definicion: "1 si cocina con carbón, leña o bosta (P1135, P1136 o P1139 = 1)"}
+  - {nombre: celular, etiqueta: "Celular", modulo: vivienda, grupo: activos, teoria: proxy, signo: "-", activa: true,
+     definicion: "P1142 = 1"}
+  # Inactiva: no es comparable entre años. Desde la ENAHO 2023 el cuestionario añade P114B1–B3
+  # (conexión fija, móvil pospago y móvil prepago) y P1144 pasa a contar el internet móvil:
+  # 50.7 % de los hogares en 2022 y 87.9 % en 2023. El modelo entrenaría con una definición y
+  # se evaluaría con otra. Sin ella el AUC-ROC de la prueba no baja.
+  - {nombre: internet, etiqueta: "Internet", modulo: vivienda, grupo: activos, teoria: proxy, signo: "-", activa: false,
+     definicion: "P1144 = 1"}
+  - {nombre: tv_cable, etiqueta: "TV por cable", modulo: vivienda, grupo: activos, teoria: proxy, signo: "-", activa: true,
+     definicion: "P1143 = 1"}
+  # Inactiva: es la suma de las seis privaciones que ya entran por separado (VIF infinito).
+  - {nombre: indice_privacion, etiqueta: "Índice de privación", modulo: vivienda, grupo: servicios, teoria: multidimensional, signo: "+", activa: false,
+     definicion: "Promedio de 6 carencias: sin agua de red, sin desagüe de red, sin electricidad, piso de tierra, pared precaria, combustible sólido"}
+
+  # ── Programas sociales (asociación por focalización, no efecto causal) ─────
+  - {nombre: juntos, etiqueta: "JUNTOS", modulo: programas, grupo: programas, teoria: proteccion, signo: "+", activa: true,
+     definicion: "P710_04 = 1 (JUNTOS, últimos 3 años)"}
+  - {nombre: pension65, etiqueta: "Pensión 65", modulo: programas, grupo: programas, teoria: proteccion, signo: "+", activa: true,
+     definicion: "P710_05 = 1 (Pensión 65, últimos 3 años)"}
+  - {nombre: qali_warma, etiqueta: "Qali Warma", modulo: programas, grupo: programas, teoria: proteccion, signo: "+", activa: true,
+     definicion: "P701_03 o P701_04 = 1 (desayunos o almuerzos escolares, últimos 3 meses)"}
+  - {nombre: vaso_leche, etiqueta: "Vaso de Leche", modulo: programas, grupo: programas, teoria: proteccion, signo: "+", activa: true,
+     definicion: "P701_01 = 1 (Vaso de Leche, últimos 3 meses)"}
+
+# Variables que NO pueden entrar al modelo porque definen o contienen la variable objetivo.
+fuga_de_datos:
+  - {nombre: gashog1d, motivo: "Gasto del hogar: define la pobreza"}
+  - {nombre: gashog2d, motivo: "Gasto total bruto: define la pobreza"}
+  - {nombre: inghog1d, motivo: "Ingreso del hogar: muy cercano al gasto"}
+  - {nombre: inghog2d, motivo: "Ingreso neto total: muy cercano al gasto"}
+  - {nombre: linea, motivo: "Línea de pobreza: umbral de la definición"}
+  - {nombre: linpe, motivo: "Línea de pobreza extrema: umbral de la definición"}
+  - {nombre: pobreza, motivo: "Es la variable objetivo"}
+  - {nombre: estrsocial, motivo: "Estrato socioeconómico construido con gasto e ingreso"}
+  - {nombre: percepho, motivo: "Perceptores de ingreso: proviene del cálculo del ingreso"}
+  - {nombre: anio, motivo: "El año de prueba nunca se vio en entrenamiento; el choque se capta con `covid`"}

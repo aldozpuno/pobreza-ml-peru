@@ -1,0 +1,59 @@
+<div class="khipu" (mouseleave)="activo.set(null)">
+  <svg [attr.width]="ancho()" [attr.height]="alto()" role="img"
+       aria-label="Pobreza monetaria por año, de 2017 a 2024, como cordones de un khipu">
+    <!-- regla de lectura -->
+    @for (r of regla(); track r.valor) {
+      <line class="regla" [attr.x1]="izquierda - 6" [attr.x2]="ancho() - 8" [attr.y1]="r.y" [attr.y2]="r.y" />
+      <text class="regla-texto" [attr.x]="izquierda - 10" [attr.y]="r.y + 4" text-anchor="end">{{ r.valor }} %</text>
+    }
+
+    <!-- cordón principal -->
+    <line class="principal" [attr.x1]="izquierda - 8" [attr.x2]="ancho() - 10" [attr.y1]="arriba" [attr.y2]="arriba" />
+    @for (x of torsion(); track x) {
+      <line class="torsion" [attr.x1]="x" [attr.y1]="arriba - 3" [attr.x2]="x + 4" [attr.y2]="arriba + 3" />
+    }
+
+    @for (c of cordones(); track c.anio; let i = $index) {
+      <g class="cordon" [class.tenue]="activo() && activo()!.anio !== c.anio" [style.--i]="i">
+        <text class="anio" [attr.x]="c.x" [attr.y]="arriba - 16" text-anchor="middle">{{ c.anio }}</text>
+        @if (c.anio === 2020 && !compacto()) {
+          <text class="nota" [attr.x]="c.x" [attr.y]="arriba - 34" text-anchor="middle">COVID-19</text>
+        }
+        <!-- cordón secundario: hogares -->
+        <path class="secundario" pathLength="1"
+              [attr.d]="'M' + (c.x + 3) + ' ' + (arriba + 10) + ' Q' + (c.x + 11) + ' ' + (arriba + 26) + ' ' + (c.x + 11) + ' ' + (arriba + c.largoHogar)" />
+        <circle class="nudo-secundario" [attr.cx]="c.x + 11" [attr.cy]="arriba + c.largoHogar" r="3" />
+        <!-- cordón colgante: personas -->
+        <ellipse class="lazo" [attr.cx]="c.x" [attr.cy]="arriba" rx="4" ry="5.5" />
+        <path class="colgante" pathLength="1" [attr.d]="'M' + c.x + ' ' + arriba + ' V' + (arriba + c.largo)" />
+        @for (n of c.nudos; track n) {
+          <ellipse class="nudo" [attr.cx]="c.x" [attr.cy]="arriba + n" rx="5.5" ry="3.6" />
+        }
+        <rect class="nudo-largo" [attr.x]="c.x - 5" [attr.y]="arriba + c.largo - 9" width="10" height="16" rx="5" />
+        @if (c.oficial !== null) {
+          <circle class="anillo" [attr.cx]="c.x" [attr.cy]="arriba + c.oficial" r="10" />
+        }
+        <text class="valor" [attr.x]="c.x" [attr.y]="arriba + c.largo + 30" text-anchor="middle">{{ etiqueta(c) }}</text>
+        <rect class="zona" [attr.x]="c.x - 22" [attr.y]="0" width="44" [attr.height]="alto()"
+              (mouseenter)="activo.set(c)" (focus)="activo.set(c)" (blur)="activo.set(null)" tabindex="0"
+              [attr.aria-label]="c.anio + ': ' + porcentaje(c.fila.tasa_personas) + ' de personas pobres'" />
+      </g>
+    }
+  </svg>
+
+  @if (activo(); as a) {
+    <app-globo [x]="a.x" [y]="arriba + a.largo / 2" [ancho]="ancho()">
+      <span class="g-titulo">{{ a.anio }}</span>
+      <span class="g-fila"><span>Personas pobres</span><b>{{ porcentaje(a.fila.tasa_personas) }}</b></span>
+      <span class="g-fila"><span>Hogares pobres</span><b>{{ porcentaje(a.fila.tasa_hogares) }}</b></span>
+      <span class="g-fila"><span>Cifra del INEI</span><b>{{ porcentaje(a.fila.tasa_oficial_inei) }}</b></span>
+      <span class="g-fila"><span>Diferencia</span><b>{{ puntos(a.fila.diferencia_pp, 2) }}</b></span>
+    </app-globo>
+  }
+
+  <ul class="claves">
+    <li><svg width="22" height="14"><line x1="11" y1="0" x2="11" y2="14" class="colgante quieto" /><ellipse cx="11" cy="7" rx="4.5" ry="3" class="nudo" /></svg>Cordón grueso: % de personas pobres, un nudo cada 5 puntos</li>
+    <li><svg width="22" height="14"><line x1="11" y1="0" x2="11" y2="14" class="secundario quieto" /></svg>Cordón delgado: % de hogares pobres</li>
+    <li><svg width="22" height="14"><circle cx="11" cy="7" r="6" class="anillo" /></svg>Anillo: cifra oficial del INEI</li>
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+.control { display: flex; align-items: center; gap: 0.9rem; margin-bottom: 1.2rem; font-size: var(--t-1); }
+.control label { color: var(--tinta-2); }
+.control input { flex: 1; max-width: 22rem; accent-color: var(--cochinilla); }
+.control output { font-weight: 700; font-size: 1.3rem; font-variation-settings: "wdth" 110; min-width: 3.5rem; }
+
+.mapa-y-lista { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem; align-items: start; }
+app-escala { display: block; margin: 0.8rem auto 0; max-width: 18rem; }
+
+.sesgo { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 2rem; align-items: start; }
+.sesgo__mapa { padding-top: 1.8rem; }
+
+@media (max-width: 860px) {
+  .mapa-y-lista, .sesgo { grid-template-columns: minmax(0, 1fr); }
+}

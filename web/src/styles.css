@@ -1,0 +1,5 @@
+/* Estilos globales. El orden importa: primero los tokens, luego la base y la maquetación. */
+@import "styles/tokens.css";
+@import "styles/base.css";
+@import "styles/layout.css";
+@import "styles/tables.css";

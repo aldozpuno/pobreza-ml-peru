@@ -1,0 +1,58 @@
+<div class="pagina">
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Qué mira el modelo para decidir</h2>
+      <p>
+        La importancia de cada variable se mide con valores SHAP: cuánto mueve, en promedio, la predicción de un hogar.
+        En {{ concordantes().length }} de las {{ conSigno().length }} variables con un signo esperado, el efecto que
+        aprendió el modelo coincide con el que predice su teoría.
+      </p>
+    </div>
+    <app-figura [titulo]="'Importancia de las variables, ' + anioPrueba()"
+      descripcion="Media del valor SHAP absoluto en una muestra de hogares de la prueba"
+      fuente="Valores SHAP sobre el margen del modelo (log-odds). Fuente: INEI, ENAHO. Elaboración propia.">
+      <ul class="claves">
+        <li><i class="cochinilla"></i>Aumenta la probabilidad de pobreza</li>
+        <li><i class="indigo"></i>La reduce</li>
+        <li><i class="neutro"></i>Efecto mixto (variables por categorías)</li>
+      </ul>
+      <app-barras [filas]="barras()" [formato]="formatoShap" descripcion="Variables ordenadas por importancia SHAP" />
+      <button type="button" class="mas" (click)="todas.set(!todas())">
+        {{ todas() ? 'Mostrar solo las 15 primeras' : 'Mostrar las ' + importancia().length + ' variables' }}
+      </button>
+    </app-figura>
+    <aside class="margen">
+      <p><strong>Programas sociales:</strong> aparecen asociados a la pobreza porque se asignan a hogares pobres. Es una relación de focalización, no un efecto del programa.</p>
+      @if (discordantes().length) {
+        <p><strong>No coinciden con la teoría:</strong>
+          @for (v of discordantes(); track v.variable; let ultimo = $last) { {{ v.etiqueta }}{{ ultimo ? '.' : ', ' }} }
+          Conviene discutirlas en la tesis.</p>
+      }
+    </aside>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>De la teoría a las variables</h2>
+      <p>Cada variable se eligió por una teoría de la pobreza. La tabla resume cuántas se comportan como esa teoría predice.</p>
+    </div>
+    <app-figura titulo="Teorías de la pobreza y variables del modelo">
+      <app-tabla [columnas]="columnasTeoria" [filas]="teorias()" />
+    </app-figura>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Antes y después de la COVID-19</h2>
+      <p>
+        El mismo modelo se explica con los hogares de 2017–2019 y con los de 2021–2024. El mayor cambio de importancia
+        está en {{ mayorCambio().etiqueta }} ({{ formatoCambio(mayorCambio().cambio) }}).
+      </p>
+    </div>
+    <app-figura titulo="Importancia antes y después de la pandemia" descripcion="Las 14 variables más importantes después de 2020"
+      fuente="Media del valor SHAP absoluto en cada periodo. Fuente: INEI, ENAHO. Elaboración propia.">
+      <app-pesas [filas]="periodos()" nombreA="2017–2019" nombreB="2021–2024" [formato]="formatoShap" [diferencia]="formatoCambio"
+                 descripcion="Importancia SHAP antes y después de la pandemia" />
+    </app-figura>
+  </section>
+</div>

@@ -1,0 +1,20 @@
+# Datos y resultados (se regeneran con el pipeline)
+datos/
+resultados/
+demo/
+*.parquet
+*.joblib
+
+# Python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+
+# Versión anterior de la web (React), reemplazada por web/ (Angular)
+dashboard/
+
+# Web
+web/node_modules/
+web/dist/
+web/.angular/

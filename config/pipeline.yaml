@@ -1,0 +1,62 @@
+# Configuración general del pipeline.
+# Para agregar un año basta con añadirlo a `anios` y su código en `codigos_inei`.
+
+proyecto: "Modelo predictivo de pobreza monetaria en el Perú"
+
+anios: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+
+rutas:
+  crudos: "datos/crudos"          # zips descargados del INEI (o copiados a mano)
+  intermedios: "datos/intermedios" # una tabla por año y módulo, ya limpia
+  procesados: "datos/procesados"   # base apilada final (parquet)
+  modelos: "resultados/modelos"
+  reportes: "resultados/reportes"  # tablas y figuras en formato EPG
+  dashboard: "web/public/data"
+
+descarga:
+  url_base: "https://proyectos.inei.gob.pe/iinei/srienaho/descarga"
+  formato: "STATA"
+  # Código de encuesta del portal de microdatos del INEI (ENAHO anual, metodología actualizada).
+  # Fuente: tabla de códigos del paquete R 'enaho' (CRAN), contrastada con el portal.
+  codigos_inei:
+    2017: 603
+    2018: 634
+    2019: 687
+    2020: 737
+    2021: 759
+    2022: 784
+    2023: 906
+    2024: 966
+  # Número de módulo en el portal → nombre interno.
+  modulos:
+    "01": vivienda       # ENAHO01-AAAA-100
+    "02": miembros       # ENAHO01-AAAA-200
+    "03": educacion      # ENAHO01A-AAAA-300
+    "04": salud          # ENAHO01A-AAAA-400
+    "05": empleo         # ENAHO01A-AAAA-500
+    "34": sumaria        # SUMARIA-AAAA
+    "37": programas      # ENAHO01-AAAA-700
+  reintentos: 3
+  timeout_seg: 600
+
+medicion:
+  # Incidencia oficial publicada por el INEI (% de personas), para validar la variable objetivo.
+  # Si la tasa reproducida difiere en más de `tolerancia_pp`, el pipeline se detiene.
+  incidencia_oficial:
+    2017: 21.7
+    2018: 20.5
+    2019: 20.2
+    2020: 30.1
+    2021: 25.9
+    2022: 27.5
+    2023: 29.0
+    2024: 27.6
+  tolerancia_pp: 0.3
+
+panel:
+  # Variable del módulo 100: "¿El hogar fue entrevistado el año pasado?" (1 = Sí, 2 = No).
+  variable_panel: "panel"
+  # Llave para enlazar hogares entre años (se informa la coincidencia, no se asume).
+  llave_enlace: ["conglome", "vivienda", "hogar"]
+
+semilla: 42

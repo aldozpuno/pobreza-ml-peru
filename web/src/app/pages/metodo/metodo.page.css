@@ -1,0 +1,14 @@
+.etapas { list-style: none; margin: 0; padding: 0; counter-reset: etapa; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem 1.5rem; }
+.etapas li { counter-increment: etapa; border-top: 3px solid var(--tinta); padding-top: 0.8rem; }
+.etapas li::before { content: counter(etapa); font-weight: 760; font-size: 1.8rem; font-variation-settings: "wdth" 80; line-height: 1; display: block; margin-bottom: 0.5rem; color: var(--cochinilla); }
+.etapas h3 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+.etapas p { font-size: var(--t-1); color: var(--tinta-2); margin-bottom: 0.5rem; }
+.etapas code { font-size: var(--t-0); color: var(--tinta-3); background: var(--linea-suave); padding: 0.1rem 0.4rem; border-radius: 2px; }
+
+.filtros { display: flex; flex-wrap: wrap; gap: 1rem 1.5rem; margin-bottom: 1.2rem; font-size: var(--t-1); color: var(--tinta-2); }
+.filtros label { display: flex; align-items: center; gap: 0.5rem; }
+.filtros input, .filtros select { border: 1px solid var(--linea); border-radius: var(--radio); background: var(--papel); padding: 0.35rem 0.6rem; min-width: 14rem; }
+.vacio { color: var(--tinta-3); }
+
+@media (max-width: 860px) { .etapas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .etapas { grid-template-columns: 1fr; } .filtros input, .filtros select { min-width: 0; width: 100%; } .filtros label { width: 100%; } }

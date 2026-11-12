@@ -1,0 +1,58 @@
+<div class="lienzo" (mouseleave)="guia.set(null)">
+  <svg [attr.width]="ancho()" [attr.height]="alto()" role="img" [attr.aria-label]="descripcion()">
+    @for (t of marcasY(); track t) {
+      <line class="rejilla" [attr.x1]="m.izquierda" [attr.x2]="ancho() - derecha()" [attr.y1]="y()(t)" [attr.y2]="y()(t)" />
+      <text class="eje" [attr.x]="m.izquierda - 8" [attr.y]="y()(t) + 4" text-anchor="end">{{ formatoY()(t) }}</text>
+    }
+    @for (t of marcasX(); track t) {
+      <text class="eje" [attr.x]="x()(t)" [attr.y]="alto() - m.abajo + 18" text-anchor="middle">{{ formatoX()(t) }}</text>
+    }
+    @if (tituloX()) { <text class="eje titulo" [attr.x]="ancho() - derecha()" [attr.y]="alto() - 2" text-anchor="end">{{ tituloX() }}</text> }
+    @if (tituloY()) { <text class="eje titulo" [attr.x]="m.izquierda" y="10">{{ tituloY() }}</text> }
+
+    @if (diagonal()) {
+      <line class="diagonal" [attr.x1]="x()(x().domain()[0])" [attr.y1]="y()(y().domain()[0])"
+            [attr.x2]="x()(x().domain()[1])" [attr.y2]="y()(y().domain()[1])" />
+    }
+
+    @for (t of trazos(); track t.id) {
+      <path class="linea" [attr.d]="t.d" [style.stroke]="t.color" />
+      @if (t.marcas) {
+        @for (p of t.puntos; track p.x) {
+          <circle class="marca" [attr.cx]="x()(p.x)" [attr.cy]="y()(p.y)" r="4" [style.fill]="t.color" />
+        }
+      }
+    }
+    @if (series().length > 1 && ancho() > 480) {
+      @for (e of etiquetasFinales(); track e.id) {
+        <text class="final" [attr.x]="e.x" [attr.y]="e.y">{{ e.nombre }}</text>
+      }
+    }
+
+    @if (valoresGuia(); as g) {
+      <line class="guia" [attr.x1]="x()(g.x)" [attr.x2]="x()(g.x)" [attr.y1]="m.arriba" [attr.y2]="alto() - m.abajo" />
+      @for (f of g.filas; track f.nombre) {
+        <circle class="marca activa" [attr.cx]="x()(f.x)" [attr.cy]="y()(f.y)" r="5" [style.fill]="f.color" />
+      }
+    }
+    <rect class="zona" [attr.x]="m.izquierda" [attr.y]="m.arriba" [attr.width]="ancho() - m.izquierda - derecha()"
+          [attr.height]="alto() - m.arriba - m.abajo" (mousemove)="mover($event)" />
+  </svg>
+
+  @if (valoresGuia(); as g) {
+    <app-globo [x]="x()(g.x)" [y]="alto() / 2" [ancho]="ancho()">
+      <span class="g-titulo">{{ tituloX() ? tituloX() + ': ' : '' }}{{ formatoX()(g.x) }}</span>
+      @for (f of g.filas; track f.nombre) {
+        <span class="g-fila"><span><i class="g-marca" [style.background]="f.color"></i>{{ f.nombre }}</span><b>{{ formatoY()(f.y) }}</b></span>
+      }
+    </app-globo>
+  }
+
+  @if (series().length > 1) {
+    <ul class="leyenda">
+      @for (s of series(); track s.id) {
+        <li><i [style.background]="s.color"></i>{{ s.nombre }}</li>
+      }
+    </ul>
+  }
+</div>

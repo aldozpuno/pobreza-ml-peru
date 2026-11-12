@@ -1,0 +1,80 @@
+<div class="pagina">
+  <header class="portada">
+    <h1>En {{ ultimo().anio }}, {{ porcentaje(ultimo().tasa_personas) }} de los peruanos vivía en pobreza monetaria.</h1>
+    <p class="entrada">
+      La cifra se reproduce desde los microdatos de la ENAHO con la fórmula del INEI y difiere de la oficial en
+      {{ decimal(Math.abs(ultimo().diferencia_pp ?? 0), 2) }} puntos. Con esos mismos hogares se entrenó un modelo que
+      estima la probabilidad de que un hogar sea pobre a partir de lo que se observa sin medir su gasto: la vivienda,
+      la educación, el empleo y el acceso a servicios.
+    </p>
+  </header>
+
+  <section class="bloque bloque--ancho">
+    <app-figura titulo="Pobreza monetaria en el Perú, 2017–2024" [conTabla]="true"
+      descripcion="Cada cordón es un año; su largo es la proporción de personas pobres. Pase el cursor para ver las cifras."
+      fuente="Fuente: INEI, ENAHO, Sumaria. Personas: ponderado por FACTOR07 × MIEPERHO; hogares: por FACTOR07. Elaboración propia.">
+      <app-khipu grafico [serie]="serie()" />
+      <app-tabla tabla [columnas]="columnasAnuales" [filas]="serie()" />
+    </app-figura>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Qué tan bien identifica el modelo a los hogares pobres</h2>
+      <p>Resultados en la ENAHO {{ meta().anio_prueba }}, un año que el modelo no vio al entrenar ni al elegir su umbral.</p>
+    </div>
+    <ul class="lecturas">
+      @for (l of lecturas(); track l.texto) {
+        <li>
+          <p class="lectura__frase"><b>{{ Math.round(l.valor * 100) }}</b> {{ l.texto }}</p>
+          <app-cien [valor]="l.valor" />
+          <p class="lectura__nota">{{ l.nota }}</p>
+        </li>
+      }
+    </ul>
+    <p class="estimacion">
+      Promediando las probabilidades del modelo, la pobreza estimada para {{ meta().anio_prueba }} es
+      <b>{{ porcentaje(kpis().tasa_predicha) }}</b>, frente a {{ porcentaje(kpis().tasa_reproducida) }} observada.
+    </p>
+    <aside class="margen">
+      <p><strong>Muestra de prueba:</strong> {{ entero(prueba()[0].hogares) }} hogares de la ENAHO {{ meta().anio_prueba }}.</p>
+      <p><strong>Umbral:</strong> un hogar se señala como pobre si su probabilidad supera {{ decimal(meta().umbral, 2) }}. Se eligió en {{ meta().anio_prueba - 1 }}, nunca en la prueba.</p>
+      <p>Con ese umbral se señala al {{ porcentaje(kpis().tasa_clasificados) }} de la población: es la cifra para focalizar, no para medir.</p>
+    </aside>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>El campo sigue siendo más pobre que la ciudad</h2>
+      <p>
+        En {{ meta().anio_prueba }}, la pobreza rural ({{ porcentaje(brecha().rural) }}) fue
+        {{ decimal(brecha().veces, 1) }} veces la urbana ({{ porcentaje(brecha().urbana) }}). Desde {{ brecha().desde }} la
+        brecha se redujo sobre todo porque la pobreza urbana subió de {{ porcentaje(brecha().urbanaInicio) }} a
+        {{ porcentaje(brecha().urbana) }}; la rural bajó de {{ porcentaje(brecha().ruralInicio) }} a {{ porcentaje(brecha().rural) }}.
+      </p>
+    </div>
+    <app-figura titulo="Pobreza monetaria por área de residencia" descripcion="Porcentaje de personas pobres">
+      <app-lineas [series]="areas()" [alto]="300" [dominioY]="[0, 50]" [formatoX]="formatoAnio" [formatoY]="formatoPct"
+                  descripcion="Pobreza rural y urbana de 2017 a 2024" />
+    </app-figura>
+  </section>
+
+  <section class="bloque">
+    <div class="bloque__entrada">
+      <h2>Hogares que se repiten entre años</h2>
+      <p>
+        La ENAHO vuelve a entrevistar a parte de su muestra, así que al apilar los años un mismo hogar puede aparecer
+        más de una vez: el {{ porcentaje(kpis().pct_repetidos) }} de las {{ entero(kpis().hogares_total) }} observaciones
+        son hogares ya entrevistados. Para descartar que el modelo acierte por haber visto antes al hogar, la prueba se
+        repitió solo con hogares nuevos.
+      </p>
+      @if (noVistos(); as n) {
+        <p>
+          Con los {{ entero(n.hogares) }} hogares nunca vistos, el AUC-ROC es {{ decimal(n.auc_roc, 3) }}, frente a
+          {{ decimal(kpis().auc_roc, 3) }} con todos. Los hogares repetidos no inflan el resultado.
+        </p>
+      }
+      <p><a routerLink="/metodo">Cómo se identifican los hogares repetidos</a></p>
+    </div>
+  </section>
+</div>

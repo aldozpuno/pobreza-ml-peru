@@ -1,0 +1,35 @@
+/* Maquetación de páginas: columna principal más columna de notas al margen. */
+.pagina { max-width: var(--ancho); margin: 0 auto; padding: 0 var(--margen) 5rem; }
+
+.bloque {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 15rem;
+  column-gap: 3rem;
+  padding-top: 4rem;
+}
+.bloque > * { grid-column: 1; min-width: 0; }
+.bloque > .margen { grid-column: 2; grid-row: 1 / span 4; align-self: start; padding-top: 0.4rem; }
+.bloque__entrada { margin-bottom: 1.5rem; }
+.bloque__entrada h2 { margin-bottom: 0.75rem; }
+.bloque__entrada p { color: var(--tinta-2); }
+.bloque--ancho > * { grid-column: 1 / -1; }
+
+.margen {
+  font-size: var(--t-0);
+  color: var(--tinta-3);
+  border-left: 3px solid var(--cochinilla);
+  padding-left: 0.9rem;
+}
+.margen p { margin-bottom: 0.7em; }
+.margen strong { color: var(--tinta-2); }
+
+.dos-columnas { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1.5rem; }
+app-figura { display: block; min-width: 0; }
+
+@media (max-width: 960px) {
+  .bloque { grid-template-columns: minmax(0, 1fr); padding-top: 3rem; }
+  .bloque > .margen { grid-column: 1; grid-row: auto; margin-top: 1.25rem; }
+}
+@media (max-width: 720px) {
+  .dos-columnas { grid-template-columns: minmax(0, 1fr); }
+}

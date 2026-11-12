@@ -1,0 +1,15 @@
+:host { display: block; min-width: 0; }
+.lienzo { position: relative; }
+svg { display: block; overflow: visible; }
+.rejilla { stroke: var(--linea-suave); }
+.eje { fill: var(--tinta-3); font-size: 12px; }
+.eje.titulo { font-size: 11.5px; }
+.diagonal { stroke: var(--neutro); stroke-dasharray: 4 4; }
+.linea { fill: none; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.marca { stroke: var(--papel); stroke-width: 2; }
+.marca.activa { stroke-width: 2.5; }
+.final { fill: var(--tinta-2); font-size: 12.5px; }
+.guia { stroke: var(--tinta-3); stroke-width: 1; }
+.zona { fill: transparent; }
+.leyenda { list-style: none; display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; padding: 0; margin: 0.7rem 0 0; font-size: var(--t-0); color: var(--tinta-2); }
+.leyenda i { display: inline-block; width: 14px; height: 3px; margin-right: 0.4rem; vertical-align: middle; border-radius: 2px; }
