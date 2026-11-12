@@ -10,6 +10,7 @@ import constructor as c
 from datos import RAIZ, f, miles
 
 FIG = str(__import__("pathlib").Path(__file__).parent / "figuras") + "/"
+REPOSITORIO = "https://github.com/aldozpuno/pobreza-ml-peru"  # enlace público del código (Anexo 7)
 
 
 def _rango(kids, txt, titulo, siguiente_prefijo):
@@ -102,7 +103,7 @@ def actualizar(doc, body, R, txt, poner_texto):
     nuevos = [
         _p("El código fuente de la investigación está organizado por capas (datos, procesamiento, medición, "
            "variables, modelos, evaluación y reportes), con pruebas automáticas, y se ejecuta con el comando "
-           "pobreza todo. Repositorio: [COMPLETAR: enlace público al repositorio del proyecto pobreza-ml-peru]."),
+           f"pobreza todo. Repositorio: {REPOSITORIO}"),
         _p("Base de datos procesada: datos/procesados/hogares.parquet, con 277 136 observaciones hogar-año de la "
            "ENAHO 2017–2024 y las llaves CONGLOME, VIVIENDA y HOGAR."),
         _p("Microdatos originales: Instituto Nacional de Estadística e Informática, Encuesta Nacional de Hogares "

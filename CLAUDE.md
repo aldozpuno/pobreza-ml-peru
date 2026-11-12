@@ -89,7 +89,6 @@ con punto; en la web, con coma. Entre el Resumen y la Bibliografía deben quedar
 
 ## Pendientes conocidos
 
-- Anexo 7: falta el enlace público del repositorio (marca `[COMPLETAR]`).
 - Anexos 8 y 9: formatos oficiales firmados.
 - Hoja de jurados: falta la fecha de sustentación.
 - Anexo 1: la indicadora de la COVID-19 figura en la dimensión "Geográfica" porque el capítulo II
