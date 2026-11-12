@@ -10,7 +10,9 @@ Actualiza el borrador de la tesis con los resultados del pipeline.
 2. Verifica que `resultados/reportes/datos/` y `web/public/data/` estén al día (ejecuta
    `pobreza evaluar` y `pobreza reportar` si cambió el código o los datos).
 3. Si cambió el código citado en el Anexo 7 o el flujo del proceso, ejecuta
-   `python herramientas/tesis/figuras.py`.
+   `python herramientas/tesis/figuras.py`. Si cambiaron los datos o el diseño de la web, sírvela
+   (`/web`) y ejecuta `python herramientas/tesis/capturas_web.py`: fotografía completos los
+   gráficos de la Figura 14 y del Anexo 7. Mira las capturas antes de seguir.
 4. Ejecuta `python herramientas/tesis/actualizar.py "<ruta>"`. Trabaja sobre el original: no dejes
    copias en `D:\Proyecto Ing Aldo`; si el usuario pide un respaldo, usa `--respaldo` con una ruta
    fuera de esa carpeta.

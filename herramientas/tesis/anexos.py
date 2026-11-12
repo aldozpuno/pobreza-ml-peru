@@ -110,16 +110,90 @@ def actualizar(doc, body, R, txt, poner_texto):
            "2017–2024. https://proyectos.inei.gob.pe/microdatos/"),
         _p("Fragmentos del código:"),
     ]
-    for etiqueta, archivo, ancho in (
-            ("a) Medición de la incidencia de la pobreza con el factor de expansión", "codigo_medicion.png", 15.0),
-            ("b) Reconstrucción del empleo informal con el criterio de la OIT", "codigo_informalidad.png", 15.0),
-            ("c) Prueba de DeLong para comparar el AUC de dos modelos", "codigo_delong.png", 15.0)):
-        nuevos.append(_p(etiqueta))
-        pp = doc.add_paragraph()
-        from docx.shared import Cm
-        pp.add_run().add_picture(FIG + archivo, width=Cm(ancho))
-        el = pp._p; el.getparent().remove(el)
-        nuevos.append(el)
+    for etiqueta, archivo in CODIGO:
+        nuevos += _imagen(doc, etiqueta, archivo)
+    nuevos.append(_p(
+        "Web de resultados. La web (carpeta web/ del repositorio) presenta los resultados en cinco páginas: "
+        "Panorama, Territorio, Modelo, Variables y Método. No calcula nada: lee los datos que genera el mismo "
+        "procedimiento, de modo que sus cifras son las de esta tesis (en la web los decimales van con coma). "
+        "Las capturas siguientes muestran sus gráficos principales."))
+    for etiqueta, archivo in WEB:
+        nuevos += _imagen(doc, etiqueta, archivo)
     for el in nuevos:
         kids[j].addprevious(el)
-    # índice de anexos: el texto en caché de las entradas no cambia (mismos títulos)
+    _titular(body, 7, TITULO_ANEXO_7)
+
+
+TITULO_ANEXO_7 = "Base de datos, scripts de procesamiento y web de resultados"
+CODIGO = [
+    ("a) Medición de la incidencia de la pobreza con el factor de expansión", "codigo_medicion.png"),
+    ("b) Reconstrucción del empleo informal con el criterio de la OIT", "codigo_informalidad.png"),
+    ("c) Prueba de DeLong para comparar el AUC de dos modelos", "codigo_delong.png"),
+]
+WEB = [  # capturas de herramientas/tesis/capturas_web.py
+    ("d) Panorama: pobreza monetaria en el Perú, 2017–2024", "web_panorama.png"),
+    ("e) Panorama: qué tan bien identifica el modelo a los hogares pobres", "web_lecturas.png"),
+    ("f) Panorama: pobreza monetaria por área de residencia", "web_area.png"),
+    ("g) Territorio: pobreza observada y estimada por departamento", "web_sesgo.png"),
+    ("h) Modelo: desempeño de XGBoost por año de evaluación", "web_por_anio.png"),
+    ("i) Modelo: matriz de confusión en la ENAHO 2024", "web_matriz.png"),
+    ("j) Modelo: curva ROC y curva de precisión y exhaustividad", "web_curvas.png"),
+    ("k) Modelo: calibración de las probabilidades", "web_calibracion.png"),
+    ("l) Variables: importancia de las variables según los valores SHAP", "web_variables.png"),
+    ("m) Variables: importancia antes y después de la pandemia", "web_periodos.png"),
+]
+ANCHO_CM, ALTO_MAX_CM = 15.0, 19.0  # ancho del texto y alto máximo para que quepa con su rótulo
+
+
+def _imagen(doc, etiqueta: str, archivo: str) -> list:
+    """Rótulo y, pegada a él, la imagen completa: tan ancha como el texto salvo que por su alto
+    no quepa en la página, en cuyo caso se reduce sin recortarla."""
+    from docx.shared import Cm
+    from PIL import Image
+    with Image.open(FIG + archivo) as im:
+        proporcion = im.width / im.height
+    ancho = min(ANCHO_CM, ALTO_MAX_CM * proporcion)
+    rotulo = _p(etiqueta)
+    ppr = rotulo.get_or_add_pPr()
+    # el rótulo no se separa de su imagen; sin la sangría de primera línea del documento (1.27 cm),
+    # que empujaría una imagen de 15 cm fuera del margen derecho
+    for hijo in (c._el("w:keepNext"), c._el("w:spacing", after=60), c._el("w:ind", firstLine=0),
+                 c._el("w:jc", val="left")):
+        ppr.append(hijo)
+    pp = doc.add_paragraph()
+    pp.add_run().add_picture(FIG + archivo, width=Cm(ancho))
+    el = pp._p
+    el.getparent().remove(el)
+    ppr = el.get_or_add_pPr()
+    for hijo in (c._el("w:spacing", after=200, line=240, lineRule="auto"), c._el("w:ind", firstLine=0),
+                 c._el("w:jc", val="left")):
+        ppr.append(hijo)
+    return [rotulo, el]
+
+
+def _titular(body, n: int, titulo: str) -> None:
+    """Cambia el título del anexo `n` en su encabezado, en su campo TC y en el índice de anexos."""
+    marca = f"_EpgAT{n}"
+    for p in body.iter(qn("w:p")):
+        hijos = list(p)
+        for k, h in enumerate(hijos):
+            if h.tag == qn("w:bookmarkStart") and h.get(qn("w:name")) == marca:
+                siguiente = next((x for x in hijos[k + 1:] if x.tag == qn("w:r")), None)
+                if siguiente is not None and siguiente.find(qn("w:t")) is not None:
+                    siguiente.find(qn("w:t")).text = titulo
+        estado = None  # recorre los campos del párrafo: REF _EpgATn → texto en caché
+        for el in p.iter(qn("w:instrText"), qn("w:fldChar"), qn("w:t")):
+            if el.tag == qn("w:instrText"):
+                # solo el campo TC de anexos (\f A): las tablas y figuras tienen su propio «n.»
+                if (el.text or "").startswith(f' TC "{n}. ') and " \\f A " in el.text:
+                    el.text = f' TC "{n}. {titulo}" \\f A \\l 5 '
+                estado = "ref" if f"REF {marca} " in (el.text or "") else None
+            elif el.tag == qn("w:fldChar"):
+                tipo = el.get(qn("w:fldCharType"))
+                if tipo == "separate" and estado == "ref":
+                    estado = "texto"
+                elif tipo == "end":
+                    estado = None
+            elif estado == "texto":
+                el.text = titulo
+                estado = None

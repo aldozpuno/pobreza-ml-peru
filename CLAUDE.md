@@ -22,7 +22,8 @@ pip install -r requirements-lock.txt && pip install -e ".[dev,tesis]" --no-deps 
 pobreza todo                         # descargar → construir → medir → entrenar → evaluar → reportar
 pobreza evaluar && pobreza reportar  # sin reentrenar
 pytest                               # pruebas con datos sintéticos
-python herramientas/tesis/figuras.py # flujograma y capturas de código para la tesis
+python herramientas/tesis/figuras.py # Figura 1, flujograma y capturas de código para la tesis
+python herramientas/tesis/capturas_web.py  # capturas completas de la web (necesita la web en :4500)
 python herramientas/tesis/actualizar.py "D:/Proyecto Ing Aldo/BORRADOR DE TESIS FINAL.docx"
 cd web && npm install && npm start   # web en http://localhost:4500
 ```

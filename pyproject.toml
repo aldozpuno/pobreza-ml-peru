@@ -26,7 +26,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7"]
-tesis = ["pygments>=2.17"]
+tesis = ["pygments>=2.17", "websocket-client>=1.6"]
 
 [project.scripts]
 pobreza = "pobreza.cli:main"

@@ -1,7 +1,7 @@
 """Genera las figuras propias de la tesis que no produce el pipeline: la integración de los
 módulos (Figura 1), el flujograma del proceso (Figura 2) y las capturas de código del Anexo 7.
 
-La captura de la web (figuras/fig_web.png) se toma a mano desde el navegador.
+Las capturas de la web (fig_web.png y web_*.png) las toma capturas_web.py.
 Uso: python figuras.py
 """
 

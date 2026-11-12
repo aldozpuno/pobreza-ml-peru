@@ -18,7 +18,8 @@ marcadores, índices de tablas, figuras y general, y numeración de páginas.
 | `constructor.py` | Bloques OOXML: títulos, párrafos, viñetas, tablas EPG, figuras y ecuaciones |
 | `paginas.py` | Calcula las páginas desde un PDF (lo genera LibreOffice o, en Windows, Microsoft Word; requiere `pdftotext`) |
 | `acronimos.py` | Lista de acrónimos: quita las siglas que el texto ya no usa y añade las que faltan |
-| `figuras.py` | Genera la Figura 1 (integración de los módulos), el flujograma y las capturas de código; `figuras/fig_web.png` se toma a mano |
+| `figuras.py` | Genera la Figura 1 (integración de los módulos), el flujograma y las capturas de código |
+| `capturas_web.py` | Fotografía completos los gráficos de la web (Figura 14 y Anexo 7) con Edge o Chrome sin ventana; requiere la web sirviéndose en `localhost:4500` |
 
 Uso: `python herramientas/tesis/actualizar.py "D:/Proyecto Ing Aldo/BORRADOR DE TESIS FINAL.docx"`.
 

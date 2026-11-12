@@ -405,7 +405,7 @@ def construir(doc, R, ctx) -> list:
     p(f"Los resultados se publicaron en una web desarrollada con Angular (Figura {F()}), que muestra la "
       "pobreza por año y por departamento, el desempeño del modelo, la importancia de las variables y el "
       "método. La web lee los datos que genera el mismo procedimiento, de modo que se actualiza al volver a "
-      "ejecutarlo.")
+      "ejecutarlo. El Anexo 7 reúne capturas de sus demás gráficos.")
     figura("Página de pobreza por departamento de la web de resultados", ctx["ruta_web"], 12.4)
 
     E.extend(cierre.discusion(R))
