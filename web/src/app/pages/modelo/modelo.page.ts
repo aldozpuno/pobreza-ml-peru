@@ -9,7 +9,7 @@ import { FiguraComponent } from '../../shared/ui/figura.component';
 import { Columna, TablaComponent } from '../../shared/ui/tabla.component';
 
 export const NOMBRES: Record<string, string> = {
-  xgboost: 'XGBoost', random_forest: 'Bosque aleatorio', probit: 'Probit', logit: 'Logit', knn: 'k vecinos (KNN)',
+  xgboost: 'XGBoost', random_forest: 'Bosque aleatorio', probit: 'Probit', logit: 'Regresión logística', knn: 'KNN',
   xgboost_sin_alquiler: 'XGBoost sin alquiler estimado (P106)',
 };
 

@@ -14,6 +14,7 @@ import sys
 from docx import Document
 from docx.oxml.ns import qn
 
+import acronimos
 import anexo1
 import anexos
 import cap3
@@ -129,18 +130,14 @@ def main(entrada, salida, paginas=None):
     i_muestra = buscar(kids, i_cap3, lambda e: estilo(e) == "Ttulo2" and txt(e).strip() == "Muestra")
     i_met = buscar(kids, i_cap3, lambda e: estilo(e) == "Ttulo2" and txt(e).startswith("Método de investigación"))
     i_desc = buscar(kids, i_met, lambda e: estilo(e) == "Ttulo2")
-    i_arq = buscar(kids, i_cap3, lambda e: estilo(e) == "Ttulo3" and txt(e).strip().startswith("Arquitectura"))
-    i_img = buscar(kids, i_arq, lambda e: e.find(".//" + qn("w:drawing")) is not None)
     ctx = Ctx(
         metodo=[copy.deepcopy(e) for e in kids[i_met + 1:i_desc]],
         ecuaciones=[copy.deepcopy(e) for e in kids[i_cap3:i_cap4] if e.find(".//" + M + "oMath") is not None],
-        img_arquitectura=copy.deepcopy(kids[i_img]),
         shap=[copy.deepcopy(e) for e in kids[i_cap3:i_cap4]
               if txt(e).startswith(("Dada la complejidad", "La lógica de SHAP"))],
+        ruta_arquitectura=str(FIGS / "fig_arquitectura.png"),
         ruta_flujo=str(FIGS / "fig_flujograma.png"), ruta_web=str(FIGS / "fig_web.png"),
     )
-    # imagen de arquitectura: sin sangría y alineada al nivel N3
-    ctx["img_arquitectura"].find(qn("w:pPr")).find(qn("w:ind")).set(qn("w:left"), "720")
     # Lugar de estudio en pasado
     for e in kids[i_cap3:i_muestra]:
         if "se llevará a cabo" in txt(e):
@@ -171,6 +168,7 @@ def main(entrada, salida, paginas=None):
     textos.matriz(body, txt)
     anexo1.actualizar(body, R)
     anexos.actualizar(doc, body, R, txt, poner_texto)
+    acronimos.actualizar(body)
     textos.indices(body, ctx, txt, estilo, paginas or {})
     if paginas:
         textos.toc(body, txt, estilo, paginas)

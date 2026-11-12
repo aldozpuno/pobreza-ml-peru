@@ -8,8 +8,8 @@ import matplotlib.patches as mpatches
 import pandas as pd
 
 from pobreza.modeling.splits import Pliegue
-from pobreza.reporting.style import (ACENTO, ACENTO_SUAVE, GRIS, GRIS_CLARO, coma_decimal,
-                                     figura, guardar)
+from pobreza.reporting.style import (ACENTO, ACENTO_SUAVE, GRIS, GRIS_CLARO, decimal,
+                                     figura, guardar, miles)
 
 
 def incidencia_anual(tabla: pd.DataFrame, carpeta: Path) -> Path:
@@ -22,7 +22,7 @@ def incidencia_anual(tabla: pd.DataFrame, carpeta: Path) -> Path:
     ax.plot(tabla["anio"], tabla["tasa_hogares"], color=ACENTO_SUAVE, lw=1.5, marker="o",
             ms=4, label="Hogares (FACTOR07)")
     for _, fila in tabla.iterrows():
-        ax.annotate(coma_decimal(fila["tasa_personas"]), (fila["anio"], fila["tasa_personas"]),
+        ax.annotate(decimal(fila["tasa_personas"]), (fila["anio"], fila["tasa_personas"]),
                     textcoords="offset points", xytext=(0, 7), ha="center", fontsize=8)
     ax.set_xlabel("Año")
     ax.set_ylabel("Pobreza monetaria (%)")
@@ -54,11 +54,12 @@ def hogares_repetidos(resumen: pd.DataFrame, carpeta: Path) -> Path:
     ax.bar(resumen["anio"], resumen["repetidos"], bottom=nuevos, color=ACENTO,
            label="Entrevistado en un año anterior")
     for _, fila in resumen.iterrows():
-        ax.annotate(f"{coma_decimal(fila['pct_repetidos'])} %",
+        ax.annotate(f"{decimal(fila['pct_repetidos'])} %",
                     (fila["anio"], fila["hogares"]), textcoords="offset points",
                     xytext=(0, 3), ha="center", fontsize=8)
     ax.set_xlabel("Año")
     ax.set_ylabel("Hogares en la muestra")
+    ax.yaxis.set_major_formatter(miles)
     ax.set_xticks(resumen["anio"])
     ax.legend(fontsize=8, ncol=2, loc="upper center", bbox_to_anchor=(0.5, -0.2))
     ax.grid(axis="x", visible=False)

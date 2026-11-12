@@ -15,90 +15,90 @@
     {
       "anio": 2017,
       "hogares_muestra": 34584,
-      "poblacion_expandida": 32106270.0777,
-      "pobres_expandidos": 6967056.4614,
-      "tasa_personas": 21.7,
-      "tasa_hogares": 17.3691,
-      "tasa_muestral": 18.6734,
+      "poblacion_expandida": 32106270.077688,
+      "pobres_expandidos": 6967056.461362,
+      "tasa_personas": 21.699987,
+      "tasa_hogares": 17.369086,
+      "tasa_muestral": 18.673375,
       "tasa_oficial_inei": 21.7,
-      "diferencia_pp": -0.0
+      "diferencia_pp": -1.3e-05
     },
     {
       "anio": 2018,
       "hogares_muestra": 37462,
-      "poblacion_expandida": 32383299.8235,
-      "pobres_expandidos": 6634681.5974,
-      "tasa_personas": 20.488,
-      "tasa_hogares": 16.5968,
-      "tasa_muestral": 18.0156,
+      "poblacion_expandida": 32383299.823459,
+      "pobres_expandidos": 6634681.597434,
+      "tasa_personas": 20.487973,
+      "tasa_hogares": 16.596769,
+      "tasa_muestral": 18.015589,
       "tasa_oficial_inei": 20.5,
-      "diferencia_pp": -0.012
+      "diferencia_pp": -0.012027
     },
     {
       "anio": 2019,
       "hogares_muestra": 34565,
-      "poblacion_expandida": 32676529.5857,
-      "pobres_expandidos": 6598495.7662,
-      "tasa_personas": 20.1934,
-      "tasa_hogares": 16.1552,
-      "tasa_muestral": 17.1966,
+      "poblacion_expandida": 32676529.585712,
+      "pobres_expandidos": 6598495.766175,
+      "tasa_personas": 20.19338,
+      "tasa_hogares": 16.155228,
+      "tasa_muestral": 17.196586,
       "tasa_oficial_inei": 20.2,
-      "diferencia_pp": -0.0066
+      "diferencia_pp": -0.00662
     },
     {
       "anio": 2020,
       "hogares_muestra": 34490,
-      "poblacion_expandida": 32969390.8559,
-      "pobres_expandidos": 9934717.0153,
-      "tasa_personas": 30.1332,
-      "tasa_hogares": 23.2675,
-      "tasa_muestral": 22.3949,
+      "poblacion_expandida": 32969390.855924,
+      "pobres_expandidos": 9934717.015297,
+      "tasa_personas": 30.133153,
+      "tasa_hogares": 23.267458,
+      "tasa_muestral": 22.394897,
       "tasa_oficial_inei": 30.1,
-      "diferencia_pp": 0.0332
+      "diferencia_pp": 0.033153
     },
     {
       "anio": 2021,
       "hogares_muestra": 34245,
-      "poblacion_expandida": 33271454.539,
-      "pobres_expandidos": 8608338.9175,
-      "tasa_personas": 25.873,
-      "tasa_hogares": 20.0169,
-      "tasa_muestral": 18.5137,
+      "poblacion_expandida": 33271454.538975,
+      "pobres_expandidos": 8608338.917457,
+      "tasa_personas": 25.873047,
+      "tasa_hogares": 20.016861,
+      "tasa_muestral": 18.513652,
       "tasa_oficial_inei": 25.9,
-      "diferencia_pp": -0.027
+      "diferencia_pp": -0.026953
     },
     {
       "anio": 2022,
       "hogares_muestra": 34213,
-      "poblacion_expandida": 33754131.4351,
-      "pobres_expandidos": 9290521.4265,
-      "tasa_personas": 27.5241,
-      "tasa_hogares": 21.8987,
-      "tasa_muestral": 20.5214,
+      "poblacion_expandida": 33754131.435135,
+      "pobres_expandidos": 9290521.426483,
+      "tasa_personas": 27.524102,
+      "tasa_hogares": 21.898691,
+      "tasa_muestral": 20.521439,
       "tasa_oficial_inei": 27.5,
-      "diferencia_pp": 0.0241
+      "diferencia_pp": 0.024102
     },
     {
       "anio": 2023,
       "hogares_muestra": 33886,
-      "poblacion_expandida": 34107047.6471,
-      "pobres_expandidos": 9906708.4104,
-      "tasa_personas": 29.0459,
-      "tasa_hogares": 23.1522,
-      "tasa_muestral": 21.5517,
+      "poblacion_expandida": 34107047.647082,
+      "pobres_expandidos": 9906708.410382,
+      "tasa_personas": 29.045928,
+      "tasa_hogares": 23.152152,
+      "tasa_muestral": 21.551673,
       "tasa_oficial_inei": 29.0,
-      "diferencia_pp": 0.0459
+      "diferencia_pp": 0.045928
     },
     {
       "anio": 2024,
       "hogares_muestra": 33691,
-      "poblacion_expandida": 34482699.3113,
-      "pobres_expandidos": 9510145.0785,
-      "tasa_personas": 27.5795,
-      "tasa_hogares": 21.8509,
-      "tasa_muestral": 20.219,
+      "poblacion_expandida": 34482699.311319,
+      "pobres_expandidos": 9510145.078504,
+      "tasa_personas": 27.579468,
+      "tasa_hogares": 21.850901,
+      "tasa_muestral": 20.21905,
       "tasa_oficial_inei": 27.6,
-      "diferencia_pp": -0.0205
+      "diferencia_pp": -0.020532
     }
   ],
   "serie_area": [
@@ -106,161 +106,161 @@
       "anio": 2017,
       "rural": 0,
       "hogares_muestra": 21670,
-      "poblacion_expandida": 24898401.6762,
-      "pobres_expandidos": 3768435.8965,
-      "tasa_personas": 15.1353,
-      "tasa_hogares": 11.4424,
-      "tasa_muestral": 10.0831
+      "poblacion_expandida": 24898401.676156,
+      "pobres_expandidos": 3768435.896468,
+      "tasa_personas": 15.135252,
+      "tasa_hogares": 11.44243,
+      "tasa_muestral": 10.083064
     },
     {
       "anio": 2017,
       "rural": 1,
       "hogares_muestra": 12914,
-      "poblacion_expandida": 7207868.4015,
-      "pobres_expandidos": 3198620.5649,
-      "tasa_personas": 44.3768,
-      "tasa_hogares": 36.7217,
-      "tasa_muestral": 33.0881
+      "poblacion_expandida": 7207868.401531,
+      "pobres_expandidos": 3198620.564894,
+      "tasa_personas": 44.376789,
+      "tasa_hogares": 36.721739,
+      "tasa_muestral": 33.088121
     },
     {
       "anio": 2018,
       "rural": 0,
       "hogares_muestra": 22550,
-      "poblacion_expandida": 25282895.7111,
-      "pobres_expandidos": 3646484.9586,
-      "tasa_personas": 14.4227,
-      "tasa_hogares": 11.0587,
-      "tasa_muestral": 9.388
+      "poblacion_expandida": 25282895.711088,
+      "pobres_expandidos": 3646484.958614,
+      "tasa_personas": 14.422735,
+      "tasa_hogares": 11.058722,
+      "tasa_muestral": 9.388027
     },
     {
       "anio": 2018,
       "rural": 1,
       "hogares_muestra": 14912,
-      "poblacion_expandida": 7100404.1124,
-      "pobres_expandidos": 2988196.6388,
-      "tasa_personas": 42.0849,
-      "tasa_hogares": 35.0745,
-      "tasa_muestral": 31.0622
+      "poblacion_expandida": 7100404.112371,
+      "pobres_expandidos": 2988196.63882,
+      "tasa_personas": 42.084881,
+      "tasa_hogares": 35.074458,
+      "tasa_muestral": 31.062232
     },
     {
       "anio": 2019,
       "rural": 0,
       "hogares_muestra": 21493,
-      "poblacion_expandida": 25670286.3726,
-      "pobres_expandidos": 3741459.5289,
-      "tasa_personas": 14.5751,
-      "tasa_hogares": 11.0707,
-      "tasa_muestral": 9.2542
+      "poblacion_expandida": 25670286.372631,
+      "pobres_expandidos": 3741459.528896,
+      "tasa_personas": 14.57506,
+      "tasa_hogares": 11.070711,
+      "tasa_muestral": 9.254176
     },
     {
       "anio": 2019,
       "rural": 1,
       "hogares_muestra": 13072,
-      "poblacion_expandida": 7006243.2131,
-      "pobres_expandidos": 2857036.2373,
-      "tasa_personas": 40.7784,
-      "tasa_hogares": 33.5551,
-      "tasa_muestral": 30.2555
+      "poblacion_expandida": 7006243.21308,
+      "pobres_expandidos": 2857036.237279,
+      "tasa_personas": 40.778434,
+      "tasa_hogares": 33.555112,
+      "tasa_muestral": 30.255508
     },
     {
       "anio": 2020,
       "rural": 0,
       "hogares_muestra": 21863,
-      "poblacion_expandida": 26098072.434,
-      "pobres_expandidos": 6792816.7857,
-      "tasa_personas": 26.028,
-      "tasa_hogares": 19.6079,
-      "tasa_muestral": 15.6612
+      "poblacion_expandida": 26098072.433984,
+      "pobres_expandidos": 6792816.785725,
+      "tasa_personas": 26.02804,
+      "tasa_hogares": 19.607929,
+      "tasa_muestral": 15.661163
     },
     {
       "anio": 2020,
       "rural": 1,
       "hogares_muestra": 12627,
-      "poblacion_expandida": 6871318.4219,
-      "pobres_expandidos": 3141900.2296,
-      "tasa_personas": 45.7249,
-      "tasa_hogares": 36.7059,
-      "tasa_muestral": 34.054
+      "poblacion_expandida": 6871318.42194,
+      "pobres_expandidos": 3141900.229572,
+      "tasa_personas": 45.724853,
+      "tasa_hogares": 36.705859,
+      "tasa_muestral": 34.054011
     },
     {
       "anio": 2021,
       "rural": 0,
       "hogares_muestra": 22075,
-      "poblacion_expandida": 26496165.295,
-      "pobres_expandidos": 5917672.8975,
-      "tasa_personas": 22.3341,
-      "tasa_hogares": 16.7078,
-      "tasa_muestral": 12.5889
+      "poblacion_expandida": 26496165.295017,
+      "pobres_expandidos": 5917672.897467,
+      "tasa_personas": 22.334073,
+      "tasa_hogares": 16.70778,
+      "tasa_muestral": 12.588901
     },
     {
       "anio": 2021,
       "rural": 1,
       "hogares_muestra": 12170,
-      "poblacion_expandida": 6775289.244,
-      "pobres_expandidos": 2690666.02,
-      "tasa_personas": 39.7129,
-      "tasa_hogares": 32.0036,
-      "tasa_muestral": 29.2605
+      "poblacion_expandida": 6775289.243958,
+      "pobres_expandidos": 2690666.01999,
+      "tasa_personas": 39.712932,
+      "tasa_hogares": 32.003563,
+      "tasa_muestral": 29.260477
     },
     {
       "anio": 2022,
       "rural": 0,
       "hogares_muestra": 22237,
-      "poblacion_expandida": 27017545.9758,
-      "pobres_expandidos": 6520752.6938,
-      "tasa_personas": 24.1353,
-      "tasa_hogares": 18.5709,
-      "tasa_muestral": 14.6153
+      "poblacion_expandida": 27017545.975841,
+      "pobres_expandidos": 6520752.693751,
+      "tasa_personas": 24.135252,
+      "tasa_hogares": 18.570909,
+      "tasa_muestral": 14.615281
     },
     {
       "anio": 2022,
       "rural": 1,
       "hogares_muestra": 11976,
-      "poblacion_expandida": 6736585.4593,
-      "pobres_expandidos": 2769768.7327,
-      "tasa_personas": 41.1153,
-      "tasa_hogares": 34.3118,
-      "tasa_muestral": 31.488
+      "poblacion_expandida": 6736585.459294,
+      "pobres_expandidos": 2769768.732732,
+      "tasa_personas": 41.115321,
+      "tasa_hogares": 34.31183,
+      "tasa_muestral": 31.487976
     },
     {
       "anio": 2023,
       "rural": 0,
       "hogares_muestra": 22108,
-      "poblacion_expandida": 27422745.4037,
-      "pobres_expandidos": 7246713.5702,
-      "tasa_personas": 26.4259,
-      "tasa_hogares": 20.4494,
-      "tasa_muestral": 16.5732
+      "poblacion_expandida": 27422745.403658,
+      "pobres_expandidos": 7246713.570242,
+      "tasa_personas": 26.425923,
+      "tasa_hogares": 20.449381,
+      "tasa_muestral": 16.573186
     },
     {
       "anio": 2023,
       "rural": 1,
       "hogares_muestra": 11778,
-      "poblacion_expandida": 6684302.2434,
-      "pobres_expandidos": 2659994.8401,
-      "tasa_personas": 39.7947,
-      "tasa_hogares": 33.4293,
-      "tasa_muestral": 30.8966
+      "poblacion_expandida": 6684302.243424,
+      "pobres_expandidos": 2659994.84014,
+      "tasa_personas": 39.794652,
+      "tasa_hogares": 33.429268,
+      "tasa_muestral": 30.896587
     },
     {
       "anio": 2024,
       "rural": 0,
       "hogares_muestra": 22031,
-      "poblacion_expandida": 27887511.4024,
-      "pobres_expandidos": 6918051.9874,
-      "tasa_personas": 24.807,
-      "tasa_hogares": 19.0451,
-      "tasa_muestral": 15.3284
+      "poblacion_expandida": 27887511.402437,
+      "pobres_expandidos": 6918051.987359,
+      "tasa_personas": 24.806989,
+      "tasa_hogares": 19.045069,
+      "tasa_muestral": 15.328401
     },
     {
       "anio": 2024,
       "rural": 1,
       "hogares_muestra": 11660,
-      "poblacion_expandida": 6595187.9089,
-      "pobres_expandidos": 2592093.0911,
-      "tasa_personas": 39.3028,
-      "tasa_hogares": 32.7507,
-      "tasa_muestral": 29.4597
+      "poblacion_expandida": 6595187.908882,
+      "pobres_expandidos": 2592093.091146,
+      "tasa_personas": 39.302794,
+      "tasa_hogares": 32.750733,
+      "tasa_muestral": 29.459691
     }
   ]
 }

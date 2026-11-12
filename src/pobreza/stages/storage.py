@@ -57,8 +57,12 @@ def leer_json(ruta: Path) -> Any:
         return json.load(archivo)
 
 
-def registros(tabla: pd.DataFrame, decimales: int = 4) -> list[dict[str, Any]]:
-    """Tabla → lista de diccionarios con números redondeados y NaN como None."""
+def registros(tabla: pd.DataFrame, decimales: int = 6) -> list[dict[str, Any]]:
+    """Tabla → lista de diccionarios con números redondeados y NaN como None.
+
+    Seis decimales: la web vuelve a redondear al mostrar, y con cuatro un 0.628536 pasaba a
+    0.6285 y de ahí a 0,628, distinto del 0.629 de la tesis.
+    """
     limpia = tabla.copy()
     for columna in limpia.select_dtypes("number").columns:
         limpia[columna] = limpia[columna].round(decimales)

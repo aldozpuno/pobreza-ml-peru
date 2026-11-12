@@ -61,8 +61,14 @@ def figura(alto_cm: float = 8.0, ancho_cm: float = ANCHO_TEXTO_CM, **kwargs):
     return plt.subplots(figsize=(cm(ancho_cm), cm(alto_cm)), **kwargs)
 
 
-def coma_decimal(valor: float, decimales: int = 1) -> str:
-    return f"{valor:.{decimales}f}".replace(".", ",")
+def decimal(valor: float, decimales: int = 1) -> str:
+    """Número con punto decimal, como en el texto y las tablas de la tesis (la web usa coma)."""
+    return f"{valor:.{decimales}f}"
+
+
+def miles(valor: float, _posicion=None) -> str:
+    """Entero con espacio de miles (30 000), como en las tablas de la tesis."""
+    return f"{int(round(valor)):,}".replace(",", " ")
 
 
 def guardar(fig, carpeta: Path, nombre: str) -> Path:

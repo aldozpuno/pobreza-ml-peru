@@ -468,7 +468,7 @@
       "llave_cualquier_anio": 0,
       "ambos_criterios": 0,
       "repetidos": 9559,
-      "pct_repetidos": 27.6399
+      "pct_repetidos": 27.639949
     },
     {
       "anio": 2018,
@@ -478,7 +478,7 @@
       "llave_cualquier_anio": 9788,
       "ambos_criterios": 9324,
       "repetidos": 10153,
-      "pct_repetidos": 27.1021
+      "pct_repetidos": 27.10213
     },
     {
       "anio": 2019,
@@ -488,7 +488,7 @@
       "llave_cualquier_anio": 10759,
       "ambos_criterios": 9692,
       "repetidos": 10907,
-      "pct_repetidos": 31.555
+      "pct_repetidos": 31.555041
     },
     {
       "anio": 2020,
@@ -498,7 +498,7 @@
       "llave_cualquier_anio": 10513,
       "ambos_criterios": 9763,
       "repetidos": 10662,
-      "pct_repetidos": 30.9133
+      "pct_repetidos": 30.913308
     },
     {
       "anio": 2021,
@@ -508,7 +508,7 @@
       "llave_cualquier_anio": 10040,
       "ambos_criterios": 8996,
       "repetidos": 10165,
-      "pct_repetidos": 29.6832
+      "pct_repetidos": 29.683165
     },
     {
       "anio": 2022,
@@ -518,7 +518,7 @@
       "llave_cualquier_anio": 9977,
       "ambos_criterios": 9120,
       "repetidos": 10088,
-      "pct_repetidos": 29.4859
+      "pct_repetidos": 29.485868
     },
     {
       "anio": 2023,
@@ -528,7 +528,7 @@
       "llave_cualquier_anio": 9735,
       "ambos_criterios": 8922,
       "repetidos": 9860,
-      "pct_repetidos": 29.0976
+      "pct_repetidos": 29.097562
     },
     {
       "anio": 2024,
@@ -538,83 +538,83 @@
       "llave_cualquier_anio": 9287,
       "ambos_criterios": 8441,
       "repetidos": 9388,
-      "pct_repetidos": 27.865
+      "pct_repetidos": 27.865008
     }
   ],
   "vif": [
     {
       "Variable": "educ_prom",
-      "VIF": 9.2772,
+      "VIF": 9.277215,
       "Diagnóstico": "Moderada (5–10)"
     },
     {
       "Variable": "educ_max",
-      "VIF": 8.5538,
+      "VIF": 8.553788,
       "Diagnóstico": "Moderada (5–10)"
     },
     {
       "Variable": "mieperho",
-      "VIF": 7.7368,
+      "VIF": 7.73685,
       "Diagnóstico": "Moderada (5–10)"
     },
     {
       "Variable": "n_menores",
-      "VIF": 6.909,
+      "VIF": 6.908958,
       "Diagnóstico": "Moderada (5–10)"
     },
     {
       "Variable": "n_mayores",
-      "VIF": 4.7574,
+      "VIF": 4.757431,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "estrato",
-      "VIF": 4.6713,
+      "VIF": 4.671328,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "rural",
-      "VIF": 4.321,
+      "VIF": 4.32102,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "n_informales",
-      "VIF": 4.1895,
+      "VIF": 4.189523,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "ratio_dependencia",
-      "VIF": 3.5597,
+      "VIF": 3.559722,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "tasa_informalidad",
-      "VIF": 3.1969,
+      "VIF": 3.196916,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "hacinamiento",
-      "VIF": 3.192,
+      "VIF": 3.192006,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "habitaciones",
-      "VIF": 2.6355,
+      "VIF": 2.635501,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "edad_jefe",
-      "VIF": 2.4799,
+      "VIF": 2.479884,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "solo_sis",
-      "VIF": 2.3225,
+      "VIF": 2.322489,
       "Diagnóstico": "Baja (< 5)"
     },
     {
       "Variable": "desague_red",
-      "VIF": 2.152,
+      "VIF": 2.151951,
       "Diagnóstico": "Baja (< 5)"
     }
   ]

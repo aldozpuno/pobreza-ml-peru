@@ -201,9 +201,10 @@ def construir(doc, R, ctx) -> list:
     p(f"La ventaja de XGBoost sobre los modelos econométricos es moderada en AUC-ROC (alrededor de "
       f"{f(mejor.auc_roc - seg.auc_roc, 3)}), "
       "pero se mantiene en todas las métricas de discriminación y en el Brier, que mide la calidad de las "
-      f"probabilidades (Figura {F()}). En el tercer objetivo se contrasta si esta diferencia es "
-      "estadísticamente significativa.")
-    figura("Comparación de los algoritmos en la validación temporal", FIG / "fig_comparacion_modelos.png", 12.4)
+      f"probabilidades. La Figura {F()} compara el AUC-PR, la métrica más exigente cuando los hogares pobres "
+      "son minoría. En el tercer objetivo se contrasta si esta diferencia es estadísticamente significativa.")
+    figura("Comparación de los algoritmos en la validación temporal según el AUC-PR",
+           FIG / "fig_comparacion_modelos.png", 12.4)
     pv = R["pliegues_m"][R["pliegues_m"].estimador.isin(list(cm.estimador))]
     piv = pv.pivot_table(index="estimador", columns="pliegue", values="auc_roc").loc[list(cm.estimador)]
     anios_ev = {pl["nombre"]: str(pl["evalua"]) for pl in R["pliegues"]}

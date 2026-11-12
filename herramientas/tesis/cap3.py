@@ -82,8 +82,8 @@ def construir(doc, R, ctx) -> list:
         "Medición de la pobreza y comparación con la cifra oficial antes de entrenar los modelos.",
     ]))
     h(3, "Arquitectura de la base de datos")
-    add(c._rotulo("Figura", ctx["fig"](), "Integración de los módulos de la ENAHO en una base con un registro por hogar", 3))
-    E.append(ctx["img_arquitectura"])
+    add(c.bloque_figura(doc, ctx["fig"](), "Integración de los módulos de la ENAHO en una base con un registro por hogar",
+                        ctx["ruta_arquitectura"], 13.0, 3))
     p("Los módulos de personas (educación, salud, empleo y miembros) se resumen primero por hogar; luego se "
       "unen a la Sumaria junto con la vivienda y los programas sociales mediante la llave año, CONGLOME, "
       "VIVIENDA y HOGAR. Así cada observación conserva su identificador y puede seguirse entre años.", 3)

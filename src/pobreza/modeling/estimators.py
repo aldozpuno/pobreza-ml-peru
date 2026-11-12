@@ -29,8 +29,8 @@ NOMBRES = {
     "xgboost": "XGBoost",
     "random_forest": "Bosque aleatorio",
     "probit": "Probit",
-    "logit": "Logit",
-    "knn": "K vecinos más cercanos",
+    "logit": "Regresión logística",
+    "knn": "KNN",
 }
 
 

@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 from pobreza.modeling.estimators import NOMBRES
-from pobreza.reporting.style import (ACENTO, BUENO, GRIS, GRIS_CLARO, MALO, coma_decimal,
+from pobreza.reporting.style import (ACENTO, BUENO, GRIS, GRIS_CLARO, MALO, decimal,
                                      figura, guardar)
 
 
@@ -19,7 +19,7 @@ def comparacion_modelos(tabla: pd.DataFrame, principal: str, carpeta: Path) -> P
     colores = [ACENTO if e == principal else GRIS_CLARO for e in datos["estimador"]]
     ax.barh([NOMBRES.get(e, e) for e in datos["estimador"]], datos["auc_pr"], color=colores)
     for i, valor in enumerate(datos["auc_pr"]):
-        ax.text(valor + 0.005, i, coma_decimal(valor, 3), va="center", fontsize=8)
+        ax.text(valor + 0.005, i, decimal(valor, 3), va="center", fontsize=8)
     ax.set_xlabel("AUC-PR promedio en los pliegues de validación")
     ax.set_xlim(0, min(1, datos["auc_pr"].max() * 1.15))
     ax.grid(axis="y", visible=False)
@@ -53,7 +53,7 @@ def calibracion(tabla: pd.DataFrame, brier: float, carpeta: Path) -> Path:
             label="Modelo calibrado")
     ax.set_xlabel("Probabilidad predicha (promedio por decil)")
     ax.set_ylabel("Proporción observada de pobres")
-    ax.text(0.97, 0.05, f"Brier = {coma_decimal(brier, 4)}", transform=ax.transAxes,
+    ax.text(0.97, 0.05, f"Brier = {decimal(brier, 4)}", transform=ax.transAxes,
             ha="right", fontsize=9)
     ax.legend(loc="upper left", fontsize=8)
     return guardar(fig, carpeta, "fig_calibracion")
