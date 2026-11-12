@@ -91,9 +91,12 @@ con punto; en la web, con coma. Entre el Resumen y la Bibliografía deben quedar
 
 - Anexo 7: falta el enlace público del repositorio (marca `[COMPLETAR]`).
 - Anexos 8 y 9: formatos oficiales firmados.
-- Tabla de operacionalización (Anexo 1): las tres variables excluidas solo están marcadas, y
-  lista indicadores que el modelo final no usa (n.º de programas, electricidad para cocinar,
-  jefe de 60 años a más) y un análisis "PSI" que el código no calcula.
-- Hoja de jurados: falta la fecha de sustentación. Bibliografía: "[Tesis (grado por confirmar)…]"
-  en Pilco Bonifacio (2023).
+- Hoja de jurados: falta la fecha de sustentación.
+- Anexo 1: la indicadora de la COVID-19 figura en la dimensión "Geográfica" porque el capítulo II
+  no define una dimensión temporal; decidir con el asesor si se crea una.
+- `D:\Proyecto Ing Aldo\Matriz_de_consistencia_Tesis_Aldo_Zanabria.docx` es un archivo aparte y
+  conserva los indicadores antiguos; el vigente es el Anexo 1 del borrador.
+
+El Anexo 1 (matriz y operacionalización) lo escribe `herramientas/tesis/anexo1.py` desde el
+catálogo de variables: si cambia `config/features.yaml`, se actualiza solo al regenerar el borrador.
 - `actualizar.py` calcula las páginas con LibreOffice o, en Windows, con Microsoft Word.

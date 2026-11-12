@@ -58,6 +58,10 @@ GLOBALES = [
     # internet se excluyó por no ser comparable entre años (cambio de cuestionario en 2023)
     ("alquiler estimado de la vivienda, internet, celular y TV por cable (−)",
      "alquiler estimado de la vivienda, celular y TV por cable (−)"),
+    # Grado confirmado en el registro de ALICIA (Concytec): tesis para el título profesional de
+    # Contador Público, 2023. https://alicia.concytec.gob.pe/vufind/Record/UPSC_3edfe4298dbfb9193d4485abd9ecf4c5
+    ("[Tesis (grado por confirmar), Universidad Privada San Carlos]",
+     "[Tesis de licenciatura, Universidad Privada San Carlos]"),
     ("que obligaron a calibrar los umbrales de decisión por dominio geográfico",
      "que en esta tesis se atendieron midiendo el error de la pobreza estimada por departamento y dominio"),
     ("y una calibración regional en los modelos predictivos", "y evaluar el error del modelo por departamento"),
@@ -140,11 +144,8 @@ MATRIZ = [
     ("XGBoost, Probit, regresión por cuantiles, KNN", "XGBoost, bosque aleatorio, logística, probit, KNN"),
     ("277 136 hogares de la ENAHO 2017–2024 (≈ 34 642 hogares por año).",
      "277 136 observaciones hogar-año de la ENAHO 2017–2024 (207 037 hogares distintos)."),
-    ("Brecha educativa intrahogar", "Brecha educativa intrahogar (excluida por colinealidad exacta)"),
-    ("Índice de privación material", "Índice de privación material (excluido por colinealidad exacta)"),
     ("calibración isotónica y umbral óptimo", "calibración isotónica, umbral elegido en el año de calibración y prueba de DeLong"),
-    ("Conexión a Internet", "Conexión a Internet (excluida por no ser comparable entre años)"),
-]
+]  # los indicadores de la variable independiente los escribe anexo1.py desde el catálogo
 
 
 def matriz(body, txt):

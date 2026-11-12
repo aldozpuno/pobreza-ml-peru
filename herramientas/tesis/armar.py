@@ -14,6 +14,7 @@ import sys
 from docx import Document
 from docx.oxml.ns import qn
 
+import anexo1
 import anexos
 import cap3
 import cap4
@@ -168,6 +169,7 @@ def main(entrada, salida, paginas=None):
     textos.marco_teorico(body, txt, estilo)
     textos.bibliografia(body, txt)
     textos.matriz(body, txt)
+    anexo1.actualizar(body, R)
     anexos.actualizar(doc, body, R, txt, poner_texto)
     textos.indices(body, ctx, txt, estilo, paginas or {})
     if paginas:

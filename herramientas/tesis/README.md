@@ -12,7 +12,8 @@ marcadores, índices de tablas, figuras y general, y numeración de páginas.
 | `cap3.py` | Capítulo III desde 3.3 Muestra |
 | `cap4.py` | Capítulo IV: resultados por objetivo específico |
 | `cierre.py` | Discusión, conclusiones y recomendaciones |
-| `textos.py` | Resumen, abstract, introducción, marco teórico 1.1.9, bibliografía, matriz e índices |
+| `textos.py` | Resumen, abstract, introducción, marco teórico 1.1.9, bibliografía, textos de la matriz e índices |
+| `anexo1.py` | Anexo 1: indicadores de la matriz de consistencia y tabla de operacionalización, desde el catálogo de variables |
 | `anexos.py` | Anexos 2, 3, 4, 5 y 7 |
 | `constructor.py` | Bloques OOXML: títulos, párrafos, viñetas, tablas EPG, figuras y ecuaciones |
 | `paginas.py` | Calcula las páginas desde un PDF (lo genera LibreOffice o, en Windows, Microsoft Word; requiere `pdftotext`) |
